@@ -9,4 +9,4 @@ The site makes it easy to create your own web pages with links (bookmarks) to yo
 
 If desired you can publish your Links&News pages and they are available to any Internet user. You can also include pages published by others into the list of your pages and use them as well as your own. The site also provides an opportunity to read news without the use of a specially created for this page.
 
-The site is based on Angular 2 / TypeScript / Webpack / Bootstrap / Asp.Net Core / C# / MS SQL server.
+The site is based on Angular 2 / TypeScript / Webpack / Bootstrap / Asp.Net Core / C# / Entity Framework / MS SQL server.
