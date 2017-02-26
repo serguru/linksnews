@@ -1,0 +1,97 @@
+<div class="row links-height-100">
+    <div class="hidden-sm-down col-md-3 col-lg-2 links-page-column bg-faded">
+        <sidebar-placeholder [component]="this"></sidebar-placeholder>
+    </div>
+    <div class="col-md-9 col-lg-10 links-page-column links-height-100">
+        <!--<div *ngIf="sourceId && sourceId.toLowerCase() !== 'sources'" class="links-height-100">-->
+
+        <div [hidden]="!sourceId || sourceId.toLowerCase() === 'sources'" class="links-height-100">
+            <div class="row" *ngIf="selectSourcesVisible">
+                <div class="col-md-12">
+                    <div style="padding: 5px 0px">
+                        <a href="#" [routerLink]="['/news/sources']">{{'News sources' | translate}}</a>
+                    </div>
+                    <select class="form-control" id="sourcesSelect" name="sourcesSelect"
+                            [(ngModel)]="sourceId" (change)="onSelectSource($event)">
+                        <option *ngFor="let source of newsSourcesWithHeader" [value]="source.newsSourceId">
+                            {{source.newsSourceId && source.newsSourceId.toLowerCase() === 'sources' ? ('News sources' | translate) : source.newsSourceId}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row links-height-100">
+                <div class="col-md-12">
+                    <div *ngIf="links && links.length > 0" style="padding-top: 10px">
+                        <div *ngFor="let link of links" [style.display]="viewMode == 2 ? 'inline-table':''">
+                            <div *ngIf="viewMode == 1" class="row">
+                                <div class="col-xs-12">
+                                    <table class="links-list-table">
+                                        <tr>
+                                            <td *ngIf="link.showImage && link.imageUrl" style="width: 150px; text-align: center;">
+                                                <a href="{{link.href}}" target="_blank">
+                                                    <img [src]="link.imageUrl" style="max-height: 150px; max-width: 150px" />
+                                                </a>
+                                            </td>
+                                            <td style="padding-left: 10px">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="{{link.href}}" target="_blank">{{link.title}}</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr *ngIf="link.showDescription">
+                                                        <td>
+                                                            {{link.description}}
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div *ngIf="viewMode == 2">
+                                <table class="links-tile-table">
+                                    <tr *ngIf="link.showImage && link.imageUrl">
+                                        <td style="text-align: center">
+                                            <a href="{{link.href}}" target="_blank">
+                                                <img [src]="link.imageUrl"/>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="{{link.href}}" target="_blank">{{link.title}}</a>
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="link.showDescription">
+                                        <td>
+                                            {{link.description}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="links && links.length === 0" class="container-fluid links-height-80">
+                        <div class="row flex-items-xs-bottom flex-items-xs-center links-height-50">
+                            <div class="col-xs-12 text-xs-center">
+                                <h5>{{'No links in this news source' | translate}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<news-sources-placeholder *ngIf="sourceId && sourceId.toLowerCase() === 'sources'" [selectable]="false"></news-sources-placeholder>-->
+        <news-sources-placeholder [hidden]="!sourceId || sourceId.toLowerCase() !== 'sources'" 
+                                  [selectable]="false" [showWait]="false"></news-sources-placeholder>
+    </div>
+</div>
+
+
+
+
+

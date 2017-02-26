@@ -1,0 +1,8 @@
+﻿<div class="container-fluid links-presenter {{column.selected ? 'links-selected' : ''}}" 
+     (click)="row.setColumnSelected(column)">
+    <div class="row flex-items-xs-middle flex-items-xs-center links-height-100">
+        <div class="col-xs-12 text-xs-center">
+            {{column.title}}
+        </div>
+    </div>
+</div>

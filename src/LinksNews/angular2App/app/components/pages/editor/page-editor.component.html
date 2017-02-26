@@ -1,0 +1,135 @@
+﻿<modal #modalPageEditor [style.z-index] = "zIndex" [keyboard]="false" [backdrop]="'static'"  
+       (onOpen)="onEditorOpen()">
+    <form #modalForm="ngForm" >
+        <modal-header *ngIf="page2edit">
+            <div #header>
+                <h5 class="modal-title">{{'edit page.Edit page' | translate}} {{pageComponent.page.title}}</h5>
+            </div>
+        </modal-header>
+        <modal-body *ngIf="page2edit">
+            <div [style.max-height]="maxHeight + 'px'" (window:resize)="onWindowResize()">
+                <div class="row">
+                    <div class="col-md-9">
+                        <file-upload-placeholder #uploader [parent]="page2edit"></file-upload-placeholder>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="name">{{'Name' | translate}}</label>
+                                    <input type="text" class="form-control input-lg" placeholder="{{'Name required' | translate}}"
+                                           [(ngModel)]="page2edit.name"
+                                           name="name" id="name" #name="ngModel" [pattern]="pattern.login" required
+                                           minlength="3" maxlength="100" wrongSpace />
+                                    <div *ngIf="name.errors && name.dirty && name.touched" class="alert alert-danger">
+                                        <div [hidden]="!name.errors['pattern']">
+                                            {{'Name contains wrong characters or spaces' | translate}}
+                                        </div>
+                                        <div [hidden]="!name.errors['required']">
+                                            {{'Name is required' | translate}}
+                                        </div>
+                                        <div [hidden]="!name.errors['minlength']">
+                                            {{'Name must be at least 3 characters long' | translate}}
+                                        </div>
+                                        <div [hidden]="!name.errors['maxlength']">
+                                            {{'Name cannot be more than 100 characters long' | translate}}
+                                        </div>
+                                        <div [hidden]="!name.errors['wrongSpace']">
+                                            {{'Name contains leading or trailing spaces' | translate}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="title">{{'Title' | translate}}</label>
+                                    <input type="text" class="form-control input-lg" placeholder="{{'Title required' | translate}}"
+                                           [(ngModel)]="page2edit.title" name="title" id="title" #title="ngModel"
+                                           required maxlength="100" wrongSpace />
+                                    <div *ngIf="title.errors && title.dirty && title.touched" class="alert alert-danger">
+                                        <div [hidden]="!title.errors['required']">
+                                            {{'Title is required' | translate}}
+                                        </div>
+                                        <div [hidden]="!title.errors['wrongSpace']">
+                                            {{'Title contains leading or trailing spaces' | translate}}
+                                        </div>
+                                        <div [hidden]="!title.errors['maxlength']">
+                                            {{'Title cannot be more than 100 characters long' | translate}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6 form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" 
+                                                [(ngModel)]="page2edit.publicAccess" name="publicAccess" />
+                                        {{'Public access' | translate}}
+                                    </label>
+                                </div>
+                                <div class="col-md-6 form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"
+                                               [(ngModel)]="page2edit.showTitle" name="showTitle" />
+                                        {{'Show title' | translate}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"
+                                               [(ngModel)]="page2edit.showDescription" name="showDescription" />
+                                        {{'Show description' | translate}}
+                                    </label>
+                                </div>
+                                <div class="col-md-6 form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"
+                                               [(ngModel)]="page2edit.showImage" name="showImage" />
+                                        {{'Show image' | translate}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="description">{{'Description' | translate}}</label>
+                                    <textarea class="form-control" id="description" name="description" [(ngModel)]="page2edit.description"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>{{'Categories' | translate}}</label>
+                            </div>
+                        </div>
+                        <div class="row" *ngFor="let category of page2edit.categories">
+                            <div class="col-xs-12 form-check">
+                                <label class="form-check-label" >
+                                    <input class="form-check-input" type="checkbox"
+                                            [checked]="category.selected"
+                                            (click)="onCategoryClick($event, category)"
+                                            name="category.selected" />
+                                    {{category.name | translate}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <column-list-editor-placeholder [row]="row2edit"></column-list-editor-placeholder>
+                    </div>
+                </div>
+            </div>
+        </modal-body>
+        <modal-footer *ngIf="page2edit">
+            <div #footer>
+                <button type="button" class="btn btn-default" (click)="savePageAndImage()" [disabled]="!modalForm.valid">{{'Save' | translate}}</button>
+                <button type="button" class="btn btn-default" (click)="closePageEditor()">{{'Cancel' | translate}}</button>
+            </div>
+        </modal-footer>
+    </form>
+</modal>

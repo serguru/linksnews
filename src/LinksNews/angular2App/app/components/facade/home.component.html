@@ -1,0 +1,55 @@
+<div id="twoClicks" class="row flex-items-xs-top flex-items-xs-center links-height-20 links-splash">
+    <div class="col-xs-12 text-xs-center">
+        <a href="https://chrome.google.com/webstore/detail/linksnews-google-chrome-e/hapcaicpccdjkjenkmcmhopgidagpmhf?authuser=2" target="_blank">
+            <h4>{{'Bookmark in two clicks' | translate}}</h4>
+        </a>
+    </div>
+</div>
+<!--flex-items-xs-middle-->
+<div class="row  flex-items-xs-center links-height-60 links-splash" id="splashDiv">
+    <div class="col-xs-12 flex-xs-middle text-xs-center">
+        <h1>{{'Enjoy your favorite' | translate}}</h1>
+        <h1>{{'web links and news bookmarked' | translate}}</h1>
+        <br />
+        <h5>{{'Keep links handy. Fresh news right on your homepage. Publish your pages.' | translate}}</h5>
+        <br />
+        <a href="#" [routerLink]="['/help']" fragment="getStarted"
+           class="btn btn-primary-outline btn-xl page-scroll wow fadeInUp m-t-3">{{'Get Started' | translate}}</a>
+    </div>
+</div>
+
+<nav class="navbar navbar-light navbar-fixed-bottom bg-faded">
+
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#responsiveCollapseHome">
+        <span class="links-icon-bar"></span>
+        <span class="links-icon-bar"></span>
+        <span class="links-icon-bar"></span>
+    </button>
+
+
+    <div class="container-fluid collapse navbar-toggleable-md" id="responsiveCollapseHome">
+        <div class="row navbar-nav">
+            <div class="col-md-3">
+                <a href="#" [routerLink]="['/siteNews']" class="nav-link">{{'Site News' | translate}}</a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" [routerLink]="['/contactUs']" class="nav-link">{{'Contact Us' | translate}}</a>
+            </div>
+            <div class="col-md-3 text-md-right">
+                <a href="#" [routerLink]="['/privacyPolicy']" class="nav-link">{{'Privacy Policy' | translate}}</a>
+            </div>
+            <div class="col-md-3 text-md-right">
+                <a href="#" [routerLink]="['/termsConditions']" class="nav-link">{{'Terms &amp; Conditions' | translate}}</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <span class="text-muted small">Copyright &copy; 2016 Links And News</span>
+            </div>
+            <div class="col-md-6 text-md-right">
+                <a target="_blank" href="https://newsapi.org/" class="nav-link text-muted small">
+                    {{'Powered by' | translate}} newsapi.org</a>
+            </div>
+        </div>
+    </div>
+</nav>

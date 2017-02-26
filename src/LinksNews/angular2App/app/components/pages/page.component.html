@@ -1,0 +1,65 @@
+<div class="row links-height-100">
+    <div class="col-md-12 links-page-column">
+        <div class="links-page {{editMode ? 'links-page-edit' : ''}}" *ngIf="page">
+            <div #adPlaceholder [hidden]="!page.showAd || editMode"></div>
+
+            <div *ngIf="editMode" class="links-align-text-right form-group">
+                <button class="btn btn-link links-no-padding links-link-btn-color" (click)="editMode=false">
+                    {{'leave edit mode' | translate}}
+                </button>
+            </div>
+
+            <div *ngIf="editMode" class="row">
+                <div class="col-xs-8">
+                    <button class="btn-link links-pale-text" style="padding: 0px" (click)="openPageEditor()"
+                            title="{{'edit page.Edit page' | translate}}">
+                        {{'Page.page' | translate}}
+                    </button>
+                </div>
+                <div class="col-xs-4 text-sm-right">
+                    <i class="fa fa-edit fa-ajust" aria-hidden="true"
+                       (click)="openPageEditor()"
+                       title="{{'edit page.Edit page' | translate}}"></i>
+                </div>
+            </div>
+            <div *ngIf="editMode" class="row">
+                <div class="col-xs-12">
+                    <h5 class="text-muted">{{page.title}}</h5>
+                </div>
+            </div>
+
+            <div *ngIf="!editMode" class="row">
+                <div class="col-md-12">
+                    <table>
+                        <tr>
+                            <td *ngIf="page.showImage && page.imageUrl" style="width: 150px; text-align: center;">
+                                <img [src]="page.imageUrl" style="max-height: 150px; max-width: 150px" />
+                            </td>
+                            <td [style.padding-left]="page.showImage && page.imageUrl ? '10px':''">
+                                <table>
+                                    <tr *ngIf="page.showTitle">
+                                        <td>
+                                            <h5 *ngIf="page.showTitle" class="text-muted">{{page.title}}</h5>
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="page.showDescription">
+                                        <td>
+                                            {{page.description}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <column-placeholder *ngFor="let column of page.columns" [column]="column" [pageComponent]="this" [rowComponent]="undefined" class="col-md-{{column.columnWidth}}"></column-placeholder>
+            </div>
+        </div>
+    </div>
+</div>
+<page-editor-placeholder #pageEditor *ngIf="editMode"></page-editor-placeholder>
+<column-editor-placeholder #columnEditor *ngIf="editMode"></column-editor-placeholder>
+<row-editor-placeholder #rowEditor *ngIf="editMode"></row-editor-placeholder>
+<link-editor-placeholder #linkEditor *ngIf="editMode"></link-editor-placeholder>

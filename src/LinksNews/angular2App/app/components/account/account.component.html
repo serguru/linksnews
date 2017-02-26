@@ -1,0 +1,105 @@
+<div *ngIf="account" class="row flex-items-xs-center links-height-100 links-page-column">
+    <form class="form col-md-10 col-lg-8 links-height-100" #accountForm="ngForm">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h5>{{'Login' | translate}} {{account.login}}</h5>
+            </div>
+        </div>
+
+        <file-upload-placeholder #uploader [parent]="account"></file-upload-placeholder>
+
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="firstName">{{'First Name' | translate}}</label>
+                <input type="text" class="form-control input-lg"
+                       [(ngModel)]="account.firstName"
+                       name="firstName" id="firstName" #firstName="ngModel" />
+            </div>
+            <div class="col-md-6">
+                <label for="lastName">{{'Last Name' | translate}}</label>
+                <input type="text" class="form-control input-lg"
+                       [(ngModel)]="account.lastName"
+                       name="lastName" id="lastName" #lastName="ngModel" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="email">{{'Email' | translate}}</label>
+                <input type="email" class="form-control input-lg" placeholder="{{'Email required' | translate}}"
+                       [(ngModel)]="account.email"
+                       name="email" #email="ngModel" required [pattern]="pattern.email" />
+                <div *ngIf="email.touched && email.dirty && email.errors" class="alert alert-danger">
+                    <div [hidden]="!email.errors['pattern']">
+                        {{'Email is not valid' | translate}}
+                    </div>
+                    <div [hidden]="!email.errors['required']">
+                        {{'Email is required' | translate}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="language">{{'Language' | translate}}</label>
+                <select #language class="form-control" id="language" name="language" [(ngModel)]="account.languageId">
+                    <option [value]="undefined"></option>
+                    <option *ngFor="let language of languages" [value]="language.id">{{language.name | translate}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="website">{{'Website' | translate}}</label>
+                <input type="text" class="form-control input-lg"
+                       [(ngModel)]="account.website"
+                       name="website" id="website" #website="ngModel" />
+            </div>
+            <div class="col-md-6">
+                <label for="telephone">{{'Telephone' | translate}}</label>
+                <input type="text" class="form-control input-lg"
+                       [(ngModel)]="account.telephone"
+                       name="telephone" id="telephone" #telephone="ngModel" />
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="language">{{'News refresh interval' | translate}}</label>
+                <select #newsRefreshInterval class="form-control" id="newsRefreshInterval" name="newsRefreshInterval"
+                        [(ngModel)]="account.newsRefreshInterval">
+                    <option *ngFor="let interval of newsRefreshIntervals" [value]="interval.value">{{interval.text | translate}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="address">{{'Address' | translate}}</label>
+                <textarea class="form-control input-lg"
+                          [(ngModel)]="account.address"
+                          name="address" id="address" #address="ngModel"></textarea>
+            </div>
+            <div class="col-md-6">
+                <label for="comment">{{'Comment' | translate}}</label>
+                <textarea class="form-control input-lg"
+                          [(ngModel)]="account.comment"
+                          name="comment" id="comment" #comment="ngModel"></textarea>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-sm-7 col-md-7">
+                <button type="button" class="btn btn-default " (click)="delete()">{{'Delete' | translate}}</button>
+                <button type="button" class="btn btn-default " (click)="passwordEditor.openPasswordEditor()">{{'Change password' | translate}}</button>
+            </div>
+            <div class="col-sm-5 col-md-5 text-md-right">
+                <button type="button" class="btn btn-default" (click)="saveAccountAndImage()" [disabled]="!accountForm.valid">{{'Save' | translate}}</button>
+                <button type="button" class="btn btn-default" (click)="cancel()">{{'Cancel' | translate}}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<password-editor-placeholder #passwordEditor></password-editor-placeholder>
+
+
+

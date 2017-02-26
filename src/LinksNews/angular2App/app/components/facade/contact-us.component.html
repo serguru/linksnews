@@ -1,0 +1,90 @@
+<div class="row flex-items-xs-middle flex-items-xs-center links-height-100 links-page-column">
+    <div class="col-sm-10 col-md-8 col-lg-6">
+        <form class="form" #contactUsForm="ngForm">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="subject">{{'Subject' | translate}}</label>
+                    <input type="text" class="form-control input-lg" placeholder="{{'Subject required' | translate}}"
+                           [(ngModel)]="message.subject"
+                           name="subject" id="subject" #subject="ngModel" required
+                           maxlength="100" wrongSpace />
+                    <div *ngIf="subject.errors && subject.dirty && subject.touched" class="alert alert-danger">
+                        <div [hidden]="!subject.errors['required']">
+                            {{'Subject is required' | translate}}
+                        </div>
+                        <div [hidden]="!subject.errors['maxlength']">
+                            {{'Subject cannot be more than 100 characters long' | translate}}
+                        </div>
+                        <div [hidden]="!subject.errors['wrongSpace']">
+                            {{'Subject contains leading or trailing spaces' | translate}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="authorName">{{'Your name' | translate}}</label>
+                    <input type="text" class="form-control input-lg" placeholder="{{'Your name required' | translate}}"
+                           [(ngModel)]="message.authorName"
+                           name="authorName" id="authorName" #authorName="ngModel" required
+                           minlength="2" maxlength="100" wrongSpace />
+                    <div *ngIf="authorName.errors && authorName.dirty && authorName.touched" class="alert alert-danger">
+                        <div [hidden]="!authorName.errors['required']">
+                            {{'Your name is required' | translate}}
+                        </div>
+                        <div [hidden]="!authorName.errors['minlength']">
+                            {{'Your name must be at least 2 characters long' | translate}}
+                        </div>
+                        <div [hidden]="!authorName.errors['maxlength']">
+                            {{'Your name cannot be more than 100 characters long' | translate}}
+                        </div>
+                        <div [hidden]="!authorName.errors['wrongSpace']">
+                            {{'Your name contains leading or trailing spaces' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email">{{'Email' | translate}}</label>
+                    <input type="email" class="form-control input-lg" placeholder="{{'Email required' | translate}}"
+                           [(ngModel)]="message.authorEmail"
+                           name="email" #email="ngModel" required [pattern]="pattern.email" />
+                    <div *ngIf="email.touched && email.dirty && email.errors" class="alert alert-danger">
+                        <div [hidden]="!email.errors['pattern']">
+                            {{'Email is not valid' | translate}}
+                        </div>
+                        <div [hidden]="!email.errors['required']">
+                            {{'Email is required' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <label for="messageText">{{'Message' | translate}}</label>
+                    <textarea rows="7" class="form-control input-lg"
+                              [(ngModel)]="message.messageText"
+                              name="messageText" id="messageText" #messageText="ngModel" required minlength="10" maxlength="500"></textarea>
+                    <div *ngIf="messageText.errors && messageText.dirty && messageText.touched" class="alert alert-danger">
+                        <div [hidden]="!messageText.errors['required']">
+                            {{'Message is required' | translate}}
+                        </div>
+                        <div [hidden]="!messageText.errors['minlength']">
+                            {{'Message must be at least 10 characters long' | translate}}
+                        </div>
+                        <div [hidden]="!messageText.errors['maxlength']">
+                            {{'Message cannot be more than 500 characters long' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <button class="btn btn-primary pull-right" (click)="send()" [disabled]="!contactUsForm.form.valid">{{'Send' | translate}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

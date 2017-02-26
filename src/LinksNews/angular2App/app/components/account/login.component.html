@@ -1,0 +1,71 @@
+﻿<div class="row {{alignVertical ? 'flex-items-xs-middle' : ''}} flex-items-xs-center links-height-100 
+     links-page-column" (window:resize)="onWindowResize($event)">
+    <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
+        <form class="form" #loginForm="ngForm">
+            <div class="form-group">
+                <label for="username">{{'Login' | translate}}</label>
+                <input type="text" class="form-control input-lg" placeholder="Login" [(ngModel)]="login"
+                       name="username" id="username" #username="ngModel" required />
+                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                    {{'Login is required' | translate}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">{{'Password' | translate}}</label>
+                <input type="password" class="form-control input-lg" placeholder="Password" [(ngModel)]="password"
+                       name="passwordInput" id="passwordInput" #passwordInput="ngModel" required />
+                <div [hidden]="passwordInput.valid || passwordInput.untouched" class="alert alert-danger">
+                    {{'Password is required' | translate}}
+                </div>
+            </div>
+            <!--<div class="form-group">
+                <button class="btn btn-default" (click)="logUserIn()" [disabled]="!loginForm.form.valid">
+                    {{'Log in.Log In' | translate}}
+                </button>
+                <span class="pull-right">
+                    <a [routerLink]="['/register']">{{'Register' | translate}}</a>
+                </span>
+            </div>-->
+
+
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <button class="btn btn-default" (click)="logUserIn()" [disabled]="!loginForm.form.valid">
+                        {{'Log in.Log In' | translate}}
+                    </button>
+                </div>
+                <div class="col-md-6 text-md-right">
+
+                    <div class="row">
+                        <div class="col-xs-12 text-md-right">
+                            <a [routerLink]="['/register']">{{'Register' | translate}}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-md-right">
+                            <button class="btn-link" style="padding: 0px" (click)="onForgotPasswordClick()">
+                                {{'Forgot password' | translate}}
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!--<table style="width: 100%">
+                        <tr>
+                            <td style="text-align: right">
+                                <a [routerLink]="['/register']">{{'Register' | translate}}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">
+                                <a [routerLink]="['/help#faq']">{{'Forgot password' | translate}}</a>
+                            </td>
+                        </tr>
+                    </table>-->
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>

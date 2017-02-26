@@ -1,0 +1,143 @@
+﻿<modal #modalColumnEditor [style.z-index]="zIndex" [keyboard]="false" [backdrop]="'static'" 
+       (onOpen)="onEditorOpen()" (onDismiss)="onEditorDismiss()">
+    <form class="form" #columnForm="ngForm">
+        <modal-header *ngIf="column2edit">
+            <div #header>
+                <h5 class="modal-title">{{'edit column.Edit column' | translate}} {{columnComponent ? columnComponent.column.title : ''}}</h5>
+            </div>
+        </modal-header>
+        <modal-body *ngIf="column2edit">
+            <div [style.max-height]="maxHeight + 'px'" (window:resize)="onWindowResize()">
+                <div class="row">
+                    <div class="col-md-5">
+                        <file-upload-placeholder #uploader [parent]="column2edit"></file-upload-placeholder>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="title">{{'Title' | translate}}</label>
+                                <input type="text" class="form-control" id="title" name="title" #title="ngModel"
+                                       placeholder="{{'Title is required' | translate}}"
+                                       [(ngModel)]="column2edit.title" required maxlength="100" wrongSpace />
+                                <div *ngIf="title.errors && title.dirty && title.touched" class="alert alert-danger">
+                                    <div [hidden]="!title.errors['required']">
+                                        {{'Title is required' | translate}}
+                                    </div>
+                                    <div [hidden]="!title.errors['wrongSpace']">
+                                        {{'Title contains leading or trailing spaces' | translate}}
+                                    </div>
+                                    <div [hidden]="!title.errors['maxlength']">
+                                        {{'Title cannot be more than 100 characters long' | translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="description">{{'Description' | translate}}</label>
+                                <textarea class="form-control" id="description" name="description" [(ngModel)]="column2edit.description"></textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12 form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"
+                                           [(ngModel)]="column2edit.showTitle"
+                                           name="showTitle" />
+                                    {{'Show title' | translate}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12 form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"
+                                           [(ngModel)]="column2edit.showImage"
+                                           name="showImage" />
+                                    {{'Show image' | translate}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12 form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"
+                                           [(ngModel)]="column2edit.showDescription"
+                                           name="showDescription" />
+                                    {{'Show description' | translate}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="columnTypeId">{{'Column type' | translate}}</label>
+                                <select #selectColumnType class="form-control" id="columnTypeId" name="columnTypeId"
+                                        [(ngModel)]="columnTypeId">
+                                    <option value="1">{{'Links' | translate}}</option>
+                                    <option value="2">{{'News' | translate}}</option>
+                                    <option value="3">{{'Rows' | translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" *ngIf="columnTypeId == 2">
+                            <div class="col-md-12">
+                                <button class="btn btn-secondary" id="showNewsSources" name="showNewsSources"
+                                        (click)="onShowNewsSourcesClick()">
+                                    {{column2edit.newsProviderSourceId ? column2edit.newsProviderSourceId : 'Add source.Add Source' | translate}}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row form-group" *ngIf="columnTypeId == 2">
+                            <div class="col-md-12 form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"
+                                           [(ngModel)]="column2edit.showNewsImages"
+                                           name="showNewsImages" />
+                                    {{'Show news images' | translate}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row form-group" *ngIf="columnTypeId == 2">
+                            <div class="col-md-12 form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"
+                                           [(ngModel)]="column2edit.showNewsDescriptions"
+                                           name="showNewsDescriptions" />
+                                    {{'Show news descriptions' | translate}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row form-group" *ngIf="columnTypeId != 3">
+                            <div class="col-md-12">
+                                <label for="viewModeId">{{'View mode' | translate}}</label>
+                                <select #selectViewMode class="form-control" id="viewModeId" name="viewModeId"
+                                        [(ngModel)]="column2edit.viewModeId">
+                                    <option [value]="1">{{'List' | translate}}</option>
+                                    <option [value]="2">{{'Tile' | translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" *ngIf="columnTypeId == 1">
+                            <div class="col-md-12">
+                                <link-list-editor-placeholder [column]="column2edit"></link-list-editor-placeholder>
+                            </div>
+                        </div>
+                        <div class="row form-group" *ngIf="columnTypeId == 3">
+                            <div class="col-md-12">
+                                <row-list-editor-placeholder [column]="column2edit"></row-list-editor-placeholder>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </modal-body>
+        <modal-footer *ngIf="column2edit">
+            <div #footer>
+                <button type="button" class="btn btn-default" (click)="saveColumnAndImage()" [disabled]="!columnForm.form.valid">{{'Save' | translate}}</button>
+                <button type="button" class="btn btn-default" (click)="closeColumnEditor()">{{'Cancel' | translate}}</button>
+            </div>
+        </modal-footer>
+    </form>
+</modal>
+
+<news-source-selector-placeholder #newsSourcesPopup *ngIf="newsPopupCreated" [columnEditor]="this"></news-source-selector-placeholder>

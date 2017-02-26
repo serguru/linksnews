@@ -1,0 +1,70 @@
+﻿<modal #modalCreatePageEditor [style.z-index] = "zIndex" [keyboard]="false" [backdrop]="'static'"  
+       (onOpen)="onEditorOpen()">
+    <form #modalForm="ngForm">
+
+        <modal-header>
+            <h4 class="modal-title">{{'Create new page' | translate}}</h4>
+        </modal-header>
+        <modal-body>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="pageTitle">{{'Page Title' | translate}}</label>
+                            <input type="text" class="form-control input-lg" placeholder="{{'Page title is required' | translate}}"
+                                   [(ngModel)]="data.pageTitle" name="pageTitle" id="pageTitle" #pageTitle="ngModel"
+                                   required maxlength="100" wrongSpace />
+                            <div *ngIf="pageTitle.errors && pageTitle.dirty && pageTitle.touched" class="alert alert-danger">
+                                <div [hidden]="!pageTitle.errors['required']">
+                                    {{'Page title is required' | translate}}
+                                </div>
+                                <div [hidden]="!pageTitle.errors['wrongSpace']">
+                                    {{'Page title contains leading or trailing spaces' | translate}}
+                                </div>
+                                <div [hidden]="!pageTitle.errors['maxlength']">
+                                    {{'Page title cannot be more than 100 characters long' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="linkTitle">{{'Link Name' | translate}}</label>
+                            <input type="text" class="form-control input-lg" placeholder="{{'Link name is required' | translate}}"
+                                   [(ngModel)]="data.linkTitle" name="linkTitle" id="linkTitle" #linkTitle="ngModel"
+                                   required maxlength="100" wrongSpace />
+                            <div *ngIf="linkTitle.errors && linkTitle.dirty && linkTitle.touched" class="alert alert-danger">
+                                <div [hidden]="!linkTitle.errors['required']">
+                                    {{'Link name is required' | translate}}
+                                </div>
+                                <div [hidden]="!linkTitle.errors['wrongSpace']">
+                                    {{'Link name contains leading or trailing spaces' | translate}}
+                                </div>
+                                <div [hidden]="!linkTitle.errors['maxlength']">
+                                    {{'Link name cannot be more than 100 characters long' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="linkAddress">{{'Link Address' | translate}}</label>
+                            <input type="text" class="form-control input-lg" placeholder="{{'Link address is required' | translate}}"
+                                   [(ngModel)]="data.linkAddress" name="linkAddress" id="linkAddress" #linkAddress="ngModel"
+                                   required />
+                            <div *ngIf="linkAddress.errors && linkAddress.dirty && linkAddress.touched" class="alert alert-danger">
+                                <div [hidden]="!linkAddress.errors['required']">
+                                    {{'Link address is required' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </modal-body>
+        <modal-footer>
+            <button type="button" class="btn btn-default" (click)="save()" [disabled]="!modalForm.valid">{{'Save' | translate}}</button>
+            <button type="button" class="btn btn-default" (click)="close()">{{'Cancel' | translate}}</button>
+        </modal-footer>
+    </form>
+</modal>

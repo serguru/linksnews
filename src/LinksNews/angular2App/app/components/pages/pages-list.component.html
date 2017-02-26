@@ -1,0 +1,59 @@
+<div *ngIf="pages && pages.length > 0" style="padding-top: 10px" class="links-height-100 links-page-column">
+    <div *ngFor="let page of pages" [style.display]="viewMode == 2 ? 'inline-table':''">
+        <table *ngIf="viewMode == 1">
+            <tr>
+                <td *ngIf="page.showImage && page.imageUrl" style="width: 150px; text-align: center;">
+                    <a href="#" [routerLink]="['/page/', page.login, page.name]">
+                        <img [src]="page.imageUrl" style="max-height: 150px; max-width: 150px" />
+                    </a>
+                </td>
+                <td style="padding-left: 10px">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="#" [routerLink]="['/page/', page.login, page.name]">{{page.title}}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="links-pale-text small">
+                                {{utilityService.loginToEllipsis(page.login)}}
+                            </td>
+                        </tr>
+                        <tr *ngIf="page.showDescription">
+                            <td>
+                                {{page.description}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <div style="padding-top: 10px">
+            <table *ngIf="viewMode == 2" class="links-tile-table">
+                <tr *ngIf="page.showImage && page.imageUrl">
+                    <td style="text-align: center">
+                        <a href="#" [routerLink]="['/page/', page.login, page.name]">
+                            <img [src]="page.imageUrl" />
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" [routerLink]="['/page/', page.login, page.name]">{{page.title}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="links-pale-text small">
+                        {{utilityService.loginToEllipsis(page.login)}}
+                    </td>
+                </tr>
+                <tr *ngIf="page.showDescription">
+                    <td>
+                        {{page.description}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

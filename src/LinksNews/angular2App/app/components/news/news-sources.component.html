@@ -1,0 +1,86 @@
+<div *ngIf="newsSources" class="row links-responsive-table">
+    <div class="col-xs-12">
+        <div class="row links-table-header" [style.border-bottom]="selectable ? '':'solid 1px lightgrey'">
+            <div *ngIf="!selectable" class="col-sm-2 links-cell">
+            </div>
+            <div class="col-sm-{{selectable ? '12':'10'}}">
+                <div class="row">
+                    <div *ngIf="selectable" class="col-xs-1 links-cell">
+                    </div>
+                    <div class="col-xs-{{selectable ? 3:4}} links-cell links-clickable" (click)="sortNewsSources('newsSourceId')">
+                        {{'Source' | translate}}
+                        <i class="fa fa-sort fa-ajust" aria-hidden="true" [hidden]="getSortHidden('newsSourceId')"></i>
+                        <i class="fa fa-sort-alpha-asc fa-ajust" aria-hidden="true"
+                           [hidden]="getSortHidden('newsSourceId',1)"></i>
+                        <i class="fa fa-sort-alpha-desc fa-ajust" aria-hidden="true"
+                           [hidden]="getSortHidden('newsSourceId',2)"></i>
+                    </div>
+                    <div class="col-xs-4  links-cell links-clickable" (click)="sortNewsSources('contentCategoryTranslated')">
+                        {{'Category' | translate}}
+                        <i class="fa fa-sort fa-ajust" aria-hidden="true" [hidden]="getSortHidden('contentCategoryTranslated')"></i>
+                        <i class="fa fa-sort-alpha-asc fa-ajust" aria-hidden="true"
+                           [hidden]="getSortHidden('contentCategoryTranslated',1)"></i>
+                        <i class="fa fa-sort-alpha-desc fa-ajust" aria-hidden="true"
+                           [hidden]="getSortHidden('contentCategoryTranslated',2)"></i>
+                    </div>
+                    <div class="col-xs-2 links-cell links-clickable" (click)="sortNewsSources('languageNameTranslated')">
+                        {{'Language' | translate}}
+                        <i class="fa fa-sort fa-ajust" aria-hidden="true" [hidden]="getSortHidden('languageNameTranslated')"></i>
+                        <i class="fa fa-sort-alpha-asc fa-ajust" aria-hidden="true"
+                           [hidden]="getSortHidden('languageNameTranslated',1)"></i>
+                        <i class="fa fa-sort-alpha-desc fa-ajust" aria-hidden="true"
+                           [hidden]="getSortHidden('languageNameTranslated',2)"></i>
+                    </div>
+                    <div class="col-xs-2 links-cell links-clickable" (click)="sortNewsSources('countryNameTranslated')">
+                        {{'Country' | translate}}
+                        <i class="fa fa-sort fa-ajust" aria-hidden="true" [hidden]="getSortHidden('countryNameTranslated')"></i>
+                        <i class="fa fa-sort-alpha-asc fa-ajust" aria-hidden="true"
+                           [hidden]="getSortHidden('countryNameTranslated',1)"></i>
+                        <i class="fa fa-sort-alpha-desc fa-ajust" aria-hidden="true"
+                           [hidden]="getSortHidden('countryNameTranslated',2)"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" [style.border-bottom]="selectable ? '':'solid 1px lightgrey'" *ngFor="let source of newsSources">
+            <div *ngIf="!selectable" class="col-sm-2 links-cell">
+                <a  target="_blank" href="{{source.newsSourceUrl}}">
+                    <img src="{{source.newsSourceSmallLogoUrl}}" class="img-thumbnail" style="max-height: 100px" />
+                </a>
+            </div>
+            <div class="col-sm-{{selectable ? '12':'10'}}">
+                <div class="row links-sortable-content">
+                    <div *ngIf="selectable" class="form-check col-xs-1 links-cell" style="text-align: center">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" 
+                                   name="radio" id="radio" 
+                                   [(ngModel)]="selectedSource" [value]="source"/>
+                        </label>
+                    </div>
+
+                    <div class="col-xs-{{selectable ? 3:4}} links-cell">
+                        <a href="#" [routerLink]="['/news', source.newsSourceId]">{{source.newsSourceId}}</a>
+                    </div>
+                    <div class="col-xs-4 links-cell">
+                        <a href="#" [routerLink]="['/categories', source.contentCategory]">{{source.contentCategoryTranslated}}</a>
+                    </div>
+                    <div class="col-xs-2 links-cell">
+                        {{source.languageNameTranslated}}
+                    </div>
+                    <div class="col-xs-2 links-cell">
+                        {{source.countryNameTranslated}}
+                    </div>
+                </div>
+                <div *ngIf="!selectable" class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12 links-cell">
+                                {{source.newsSourceDescription}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

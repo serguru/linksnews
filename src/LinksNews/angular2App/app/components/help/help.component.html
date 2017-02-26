@@ -1,0 +1,10 @@
+﻿<div class="row links-height-100">
+    <div class="hidden-sm-down col-md-3 links-page-column bg-faded">
+        <sidebar-placeholder [component]="this"></sidebar-placeholder>
+    </div>
+    <div id="helpContetnDiv" class="col-md-9 links-page-column links-height-100">
+        <help-en-placeholder *ngIf="translate.currentLang === 'en'" [component]="this"></help-en-placeholder>
+        <help-ru-placeholder *ngIf="translate.currentLang === 'ru'" [component]="this"></help-ru-placeholder>
+    </div>
+</div>
+

@@ -1,0 +1,406 @@
+﻿<div class="link-help-content">
+    <br />
+    <h4>Links And News Help</h4>
+    <br />
+    <h5>Content</h5>
+    <ul class="links-no-bullet">
+        <li *ngFor="let section of component.sections">
+            <a href='#' [routerLink]="['/help']" fragment="{{section.id}}"
+               (click)="component.onAnchorClick($event, section.id)">{{section.name}}</a>
+        </li>
+    </ul>
+    <br />
+
+    <h5 id="introduction">Why this site</h5>
+    <section class="help-section">
+        <p>
+            There are a lot of resources on the Internet to whom you would like to come back again and again. To make
+            this possible you need to store somewhere links (bookmarks) to such resources. The paper on which you have written down a link
+            will be lost immediately. Use of the browser to store links is uncomfortable. Everytime
+            search for the desired link using of Google is tedious. So what to do?
+        </p>
+        <p>
+            Use this site!
+        </p>
+        <p>
+            The site makes it easy to create your own web pages with links (bookmarks) to your favorite
+            Internet resources. In addition you can place on a page the headlines that are
+            published by the most prominent news agencies of the world. News will be automatically updated
+            with intervals set by you. Then just make your Links And News page in the browser a default page
+            and every time you open the browser your favorite links and news are right in front of to you!
+        </p>
+        <p>
+            If desired you can publish your Links And News pages and they are available to any Internet user. You
+            can also include <a href="#" [routerLink]="['/categories/all']">pages published</a> by others
+            into the list of your pages and use them as well as your own. The site also provides an opportunity to
+            read <a href="#" [routerLink]="['/news/sources']"> news </a> without the use of a specially created for this page.
+        </p>
+        <p>
+            To create your own Links And News pages it did not require any special knowledge.
+        </p>
+    </section>
+    <h5 id="getStarted">Let's get started</h5>
+    <section class="help-section">
+        <p>How to create a very first page</p>
+        <p>
+            Let's create your first Links And News Page. To create your own pages, you need
+            to be a registered user. So if you have not registered yet, please
+            <a href="#" [routerLink]="['/register']"> register </a>. If you do not want to register -
+            it does not matter, just use pages published by other users or read
+            <a href="#" [routerLink]="['/news/sources']"> news </a>.
+        </p>
+        <ol>
+            <li>
+                Navigate to <i class="fa fa-columns fa-ajust" aria-hidden="true"></i> "My pages" 
+                in the main menu. Your pages list is empty at the moment.
+            </li>
+            <li>
+                Choose <i class="fa fa-columns fa-ajust" aria-hidden="true"></i> 
+                "My pages" -> "Add". A window will open.
+            </li>
+            <li>
+                Enter "My page" into "Page name" field.
+            </li>
+            <li>
+                Enter "Google" into "Link name" field.
+            </li>
+            <li>
+                Enter "google.com" into "Link address".
+            </li>
+            <li>
+                Click "Save" button. The window will close.
+            </li>
+            <li>
+                Congratulations! Your first Links And News page is in front of you. By using the link "Google" you can go to google.com site.
+            </li>
+            <li>
+                To quickly add to your page links (bookmarks) directly from the Internet
+                page on which you are install 
+                <a href="https://chrome.google.com/webstore/detail/linksnews-google-chrome-e/hapcaicpccdjkjenkmcmhopgidagpmhf?authuser=2" target="_blank">
+                    Links And News extension
+                </a> for
+                <a href="https://www.google.com/chrome/browser/desktop/index.html?brand=CHBD" target="_blank">Google Chrome</a> browser and
+                follow the instructions in <a href="#" [routerLink]="['/help']" fragment="extension">Bookmark in two clicks</a> section.
+            </li>
+        </ol>
+    </section>
+
+    <h5 id="pageStructure">Page structure</h5>
+    <section class="help-section">
+        <p>
+            A page consists of its own properties, such as name and title and may also include
+            columns, rows and links (bookmarks). Columns and rows can be hierarchically nested allowing
+            creating pages of any complexity. Pages, columns and links can include images and descriptions
+            which can be hidden or visible.
+        </p>
+        <p>
+            Each page has a unique Interenet address that ends with
+            your user name and a page name. For example, if your login is "mylogin" and a name of the page is "mypage"
+            the address of the page will be https://linksnews.org/pages/mylogin/mypage. If you publish your page
+            it will be available at this address to any Internet user. The page will be displayed in the
+            <a href="#" [routerLink]="['/categories/all']">categories</a> you specify.
+        </p>
+        <p>
+            In order to put links or news on a page you need to add at least one column to the page first.
+            A page can contain up to twelve columns. You can specify a title and a description for each column
+            as well as upload an image. A column can contain links, news or rows. In the simplest case you create
+            a column and add links to it or specify a source of the news. If you want to create a more complex column containing
+            for example links and news you should add two rows to a column first. Then you add a column with links to one row and
+            a column with news to other row. As well as a page a row can contain up to twelve columns.
+        </p>
+    </section>
+    <h5 id="pageCreation">Page creation</h5>
+    <section class="help-section">
+        <p>
+            You can create a page in few simple steps.
+        </p>
+        <ol>
+            <li>
+                If you have not yet logged in please log in. To do this 
+                choose <i class="fa fa-user fa-ajust" aria-hidden="true"></i>
+                "Account" -> "Log in" from the menu.
+            </li>
+            <li>
+                Navigate to <i class="fa fa-columns fa-ajust" aria-hidden="true"></i> 
+                "My pages". There are two ways to add a page.
+            </li>
+            <li>
+                Way 1: Select <i class="fa fa-columns fa-ajust" aria-hidden="true"></i> 
+                "My page" -> "Edit". This will open an "Edit pages list" window. Press
+                "Add." A "New page" will appear at the bottom of the window. Click "Save". The window "Edit pages list"
+                will close. The list of pages will display a newly created page.
+                <br />
+                Way 2: To quickly create a simple page you can select 
+                <i class="fa fa-columns fa-ajust" aria-hidden="true"></i> 
+                "My page" -> "Add". This will create a page with one column and one link.
+            </li>
+            <li>
+                Go to the created page. To do this, click on the page title. If you used the quick page creating you are already there.
+            </li>
+            <li>
+                Navigate to <i class="fa fa-file-text-o fa-ajust" aria-hidden="true"></i>
+                "Page" -> "Edit". The page will go to edit mode. A next step is to add columns to the page.
+            </li>
+            <li>
+                Click the edit icon <i class="fa fa-edit fa-ajust" aria-hidden="true"></i>
+                on the right side of a page or click "page" on the left. "Edit page" window appears. Fill
+                required fields, upload an image if desired. To add one or more columns and adjust their width
+                use the buttons at the bottom of the window. In this step add one
+                column and make it the maximum width. Click "Save". The window "Edit page" will close and the page
+                will display the added column. In the next step we will edit the properties of the column and add links there.
+            </li>
+            <li>
+                Click the edit icon <i class="fa fa-edit fa-ajust" aria-hidden="true"></i>
+                on the right side of a column or click "column" on the left. "Edit column" window appears. By default the column type
+                is "Links". Do not change it. Select a "View mode", "List" or "Tile". If desired you can upload an
+                image and specify a title and description. Then add one or more links with the "Add" button.
+                Click "Save". The window closes and the column displays links added. Next specify the properties of links.
+            </li>
+            <li>
+                Click the edit icon <i class="fa fa-edit fa-ajust" aria-hidden="true"></i>
+                on the right side of a link or click "link" on the left. "Edit link" window appears. Specify the title for the link,
+                which will be displayed on the page. For example, if you create a link to the Google website type in "Google".
+                Set the address of the link. The easiest way to do this is to go to the website on the Internet
+                for which you are creating the link and copy the adderss for the site from the browser's address bar, and then
+                paste the copied URL into the "Address" field. In this case it is "http://google.com". Click "Save". The window closes
+                and a link title will be displayed inside the link edited.
+            </li>
+            <li>
+                To complete the creation of the page choose <i class="fa fa-file-text-o fa-ajust" aria-hidden="true"></i>
+                "Page" -> "Leave edit mode". Page will leave edit mode
+                and enter browse mode. Now you can use the created links to go to the corresponding Internet pages.
+            </li>
+        </ol>
+    </section>
+
+    <h5 id="extension">Bookmark in two clicks</h5>
+    <section class="help-section">
+        <p>
+            Adding a link (bookmark) using the method described in section
+            <a href="#" [routerLink]="['/help']" fragment="pageCreation">Page creation</a> may seem too complicated.
+            To quickly bookmark a page directly from this page use
+            <a href="https://chrome.google.com/webstore/detail/linksnews-google-chrome-e/hapcaicpccdjkjenkmcmhopgidagpmhf?authuser=2" target="_blank">
+                Links And News extension
+            </a> for
+            <a href="https://www.google.com/chrome/browser/desktop/index.html?brand=CHBD" target="_blank">Google Chrome</a> browser.
+        </p>
+        <ol>
+            <li>
+                Use <a href="https://www.google.com/chrome/browser/desktop/index.html?brand=CHBD" target="_blank">Google Chrome</a> browser.
+            </li>
+            <li>
+                Install
+                <a href="https://chrome.google.com/webstore/detail/linksnews-google-chrome-e/hapcaicpccdjkjenkmcmhopgidagpmhf?authuser=2" target="_blank">
+                    Links And News extension
+                </a>.
+            </li>
+            <li>
+                Navigate to an Internet page you want to bookmark. Press
+                <i class="fa fa-link fa-ajust" aria-hidden="true"></i> icon on the right of the browser's address bar.
+                A popup window Links And News will open.
+            </li>
+            <li>
+                If you are not authorized on Links And News website an authorization form will be shown. Enter your login and
+                password and press "Login". After successful authorization a form for bookmarking opens.
+            </li>
+            <li>
+                Select a page in the "Page" drop-down list. To make a page appear in this list the page should have 
+                at least one column of type "Links". To create a page follow the instructions in sections
+                <a href="#" [routerLink]="['/help']" fragment="getStarted"> Let's get started</a> or
+                <a href="#" [routerLink]="['/help']" fragment="pageCreation">Page creation</a>.
+            </li>
+            <li>
+                Select a column in drop-down list "Column".
+            </li>
+            <li>
+                Fields "Link Name" and "Link Address (Url)" will be filled in automatically. You can change them if you wish.
+            </li>
+            <li>
+                Press "Add link to Links And News" button. A link will be added to the links list in a column specified.
+            </li>
+            <li>
+                Recent page and column you selected will be set by default any time you open this popup window.
+            </li>
+        </ol>
+    </section>
+
+    <h5 id="addingNews">News on page</h5>
+    <section class="help-section">
+        <p>
+            To place news on your page it is necessary to add there a column, specify the column type "News" and choose a news source
+            from a list of available news sources.
+        </p>
+        <ol>
+            <li>
+                Navigate to <i class="fa fa-columns fa-ajust" aria-hidden="true"></i> 
+                "My Page". Select the page on which you want to add news or create a new page. Go to this page.
+            </li>
+            <li>
+                Switch to edit mode using <i class="fa fa-file-text-o fa-ajust" aria-hidden="true"></i> "Page" -> "Edit".
+            </li>
+            <li>
+                Select the existing column or add a new one. Click the edit icon <i class="fa fa-edit fa-ajust" aria-hidden="true"></i>
+                on the right side of the column. "Edit column" window will open.
+            </li>
+            <li>
+                Select "News" from the "Column type" drop-down list.
+            </li>
+            <li>
+                Click on "Add source" button. A window "News sources" will open showing a list of available news sources.
+            </li>
+            <li>
+                Select a source. To do this click on the round button on the left for the appropriate source.
+            </li>
+            <li>
+                Click "Save". Window "News sources" will close. The name of the selected news source appears in the
+                the "Edit column" window.
+            </li>
+            <li>
+                Click "Save". The window "Edit column" will close.
+            </li>
+            <li>
+                To complete the addition of news on the page select <i class="fa fa-file-text-o fa-ajust" aria-hidden="true"></i>
+                "Page" -> "Leave edit mode". Page will go
+                to browse mode. News from the source you have specified will be displayed in the appropriate column.
+            </li>
+        </ol>
+    </section>
+    <h5 id="combinedContent">Links and news in one column</h5>
+    <section class="help-section">
+        <p>
+            You can place links and news or any their combination within the same column. To do this it is necessary to specify
+            column type "Rows" and add the number of rows. Then add a column inside each row with
+            news or links as well as you do that for a page.
+        </p>
+        <ol>
+            <li>
+                Navigate to <i class="fa fa-columns fa-ajust" aria-hidden="true"></i>
+                "My Pages". Select the page on which you want to add news or create a new one. Go to this page.
+            </li>
+            <li>
+                Select the existing column or add a new one. Click the edit icon <i class="fa fa-edit fa-ajust" aria-hidden="true"></i>
+                on the right side of the column. "Edit column" window will open.
+            </li>
+            <li>
+                Select "Rows" from the "Column type" drop-down list.
+            </li>
+            <li>
+                Add the necessary number of rows.
+            </li>
+            Click "Save". The window "Edit column" will close. Added rows are displayed in the column. Further
+            you need to add columns containing links or news to the rows.
+            <li>
+                Click the edit icon <i class="fa fa-edit fa-ajust" aria-hidden="true"></i>
+                on the right side of a row or click "row" on the left. "Edit row" window will open. Add one or more
+                columns.
+            </li>
+            <li>
+                Click "Save". The window "Edit row" will close. Added columns appear within the row.
+            </li>
+            <li>
+                To add links or news to a column use the instructions in "Page creation" and
+                "News on page" sections of this help.
+            </li>
+        </ol>
+    </section>
+    <h5 id="categories">Categories</h5>
+    <section class="help-section">
+        <p>
+            To view published L&amp;N pages navigate to <i class="fa fa-tasks fa-ajust" aria-hidden="true"></i>
+            "Categories". The pages statistics will display. 
+            Using the list of categories you can go to the category of pages you are interested in. To change
+            a page display mode select "List" or "Tile" from the "Categories" menu.
+        </p>
+    </section>
+    <h5 id="news">News</h5>
+    <section class="help-section">
+        <p>
+            To view the news navigate to <i class="fa fa-newspaper-o fa-ajust" aria-hidden="true"></i>
+            "News". A list of news sources will appear. A link "Source" references 
+            a page containing published by the source news. To change the display mode select "List" or "Tile" from the 
+            "News" menu. A link to "Category" will go to the appropriate category of L&amp;N pages. 
+            By clicking on the logo you can go to the news source website.
+        </p>
+    </section>
+    <h5 id="account">Account</h5>
+    <section class="help-section">
+        <p>
+            To edit personal information, change your password, upload your photo or delete an account
+            navigate to <i class="fa fa-user fa-ajust" aria-hidden="true"></i> "&lt;Your login&gt;" -> "My Account". 
+            You can also change the interval for automatic news updates and website language.
+        </p>
+    </section>
+    <h5 id="contactUs">Contact us</h5>
+    <section class="help-section">
+        <p>
+            To send us a message navigate to <i class="fa fa-link fa-ajust hidden-md-down" aria-hidden="true"></i> 
+            <a href="#" [routerLink]="['/home']">main page</a>  of the site and select
+            "Contact us" at the bottom of the page. We will send an answer to your e-mail address.
+        </p>
+    </section>
+    <h5 id="siteNews">Site news</h5>
+    <section class="help-section">
+        <p>
+            To read the site news go to the <a href="#" [routerLink]="['/home']">main page</a> of the site and select
+            "Site news" at the bottom of the page.
+        </p>
+    </section>
+    <h5 id="faq">FAQ</h5>
+    <section class="help-section">
+        <p>
+            Q: How do I bookmark a page directly from that page?
+            <br />
+            A: Use <a href="https://www.google.com/chrome/browser/desktop/index.html?brand=CHBD" target="_blank">
+                Google Chrome
+            </a> Browser. Install
+            <a href="https://chrome.google.com/webstore/detail/linksnews-google-chrome-e/hapcaicpccdjkjenkmcmhopgidagpmhf?authuser=2" target="_blank">
+                Links And News extension
+            </a>. Follow the instructions in <a href="#" [routerLink]="['/help']" fragment="extension"> 
+                Bookmark in two clicks
+            </a> section.
+        </p>
+        <p>
+            Q: How to restore a forgotten password?
+            <br />
+            A: <a href="#" [routerLink]="['/contactUs']">Send</a>  us a message. We will send your new password
+            to your email address.
+        </p>
+        <p>
+            Q: How do I add a page published by others to <i class="fa fa-columns fa-ajust" aria-hidden="true"></i> "My Pages"?
+            <br />
+            A: Go to the page you're interested in and select <i class="fa fa-file-text-o fa-ajust" aria-hidden="true"></i>
+            "Page" -> "Add to My pages"
+        </p>
+        <p>
+            Q: How to copy a page to <i class="fa fa-columns fa-ajust" aria-hidden="true"></i> "My Pages"?
+            <br />
+            A: Go to the page you're interested in and select <i class="fa fa-file-text-o fa-ajust" aria-hidden="true"></i>
+            "Page" -> "Copy to My pages". You can
+            copy any page including your own.
+        </p>
+        <p>
+            Q: What is the difference between "Add to My pages" and "Copy to My pages"?
+            <br />
+            A: "Add to My pages" means to include a page published by someone in a list of your pages. 
+            You cannot edit this page but you can remove it from the list of your pages. If the page's author updates the page
+            changes will be visible to you. And "Copy to My pages" means to make a copy of the page and put it in the list
+            your pages. You can use the copy the same way as you use your other own pages.
+        </p>
+        <p>
+            Q: How do I delete a page?
+            <br />
+            A: Select <i class="fa fa-columns fa-ajust" aria-hidden="true"></i>
+            "My pages" -> "Edit". An "Edit pages list" window will appear. Select the desired page and click "Delete." Then
+            save the changes.
+        </p>
+        <p>
+            Q: How to switch site language?
+            <br />
+            A: If you are not logged in choose <i class="fa fa-language fa-ajust" aria-hidden="true"></i> "Language" ->
+            &lt;language&gt;. If you are logged in navigate to
+            <i class="fa fa-user fa-ajust" aria-hidden="true"></i> "&lt;Your login&gt;" -> "My account", choose
+            a language from the drop-down list "Language" and save changes by clicking on "Save" button located
+            at the form bottom.
+        </p>
+    </section>
+</div>

@@ -1,0 +1,69 @@
+﻿<modal #modalPagesListEditor [style.z-index] = "zIndex" [keyboard]="false" [backdrop]="'static'"  
+       (onOpen)="onEditorOpen()"
+       (onDismiss)="onEditorDismiss()"
+       >
+    <form #modalForm="ngForm" *ngIf="pages2edit">
+        <modal-header>
+            <div #header>
+                <h5 class="modal-title">{{"Edit pages list" | translate}}</h5>
+            </div>
+        </modal-header>
+        <modal-body>
+            <div [style.max-height]="maxHeight + 'px'" (window:resize)="onWindowResize()">
+                <div class="row form-group">
+                    <div class="btn-group btn-group col-md-4" role="group">
+                        <button type="button" class="btn btn-secondary"
+                                [disabled]="pages2edit.length >= 500"
+                                (click)="addNewPage()">
+                            {{'Add' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                [disabled]="!selectedPage"
+                                (click)="deletePage(selectedPage)">
+                            {{'Delete' | translate}}
+                        </button>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="btn-group btn-group pull-right" role="group">
+                            <button type="button" class="btn btn-secondary"
+                                    [disabled]="!selectedPage || leftmostPageSelected"
+                                    (click)="shiftSelectedPageLeft()">
+                                {{'To Left' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-secondary"
+                                    [disabled]="!selectedPage || rightmostPageSelected"
+                                    (click)="shiftSelectedPageRight()">
+                                {{'To Right' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="pages2edit && pages2edit.length === 0" class="row links-presenter-list">
+                    <div class="col-xs-12">
+                        <div class="container-fluid links-presenter">
+                            <div class="row flex-items-xs-middle flex-items-xs-center links-height-100">
+                                <div class="col-xs-12 text-xs-center links-pale-text">
+                                    {{'no pages' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="pages2edit && pages2edit.length > 0" class="links-presenter-list">
+                    <div *ngFor="let page of pages2edit" class="links-presenter links-page-presenter flex-items-xs-middle flex-items-xs-center
+                     {{selectedPage == page ? 'links-selected' : ''}}"
+                         (click)="setPageSelected(page)">
+                        <div style="height: 60px">{{page.title}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </modal-body>
+        <modal-footer>
+            <div #footer>
+                <button type="button" class="btn btn-default" (click)="savePagesList()" [disabled]="!modalForm.valid">{{'Save' | translate}}</button>
+                <button type="button" class="btn btn-default" (click)="dismissPagesListEditor()">{{'Cancel' | translate}}</button>
+            </div>
+        </modal-footer>
+    </form>
+</modal>

@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12 {{editMode ? 'links-row-edit' : ''}}" >
+        <div class="row" [hidden]="!row.showAd || editMode">
+            <div class="col-md-12">
+                <div #adPlaceholder></div>
+            </div>
+        </div>
+        
+        <div *ngIf="editMode" class="row">
+            <div class="col-xs-8">
+                <button class="btn-link links-pale-text" style="padding: 0px" (click)="openRowEditor()"
+                   title="{{'edit row' | translate}}">
+                    {{'row' | translate}}
+                </button>
+            </div>
+            <div class="col-xs-4 text-sm-right">
+                <i class="fa fa-edit fa-ajust" aria-hidden="true"
+                   (click)="openRowEditor()"
+                   title="{{'edit row' | translate}}"></i>
+            </div>
+        </div>
+        <div *ngIf="editMode" class="row">
+            <div class="col-xs-12">
+                <h6 class="text-muted">{{row.title}}</h6>
+            </div>
+        </div>
+
+        <div *ngIf="!editMode" class="row">
+            <div class="col-md-12">
+                <h6 *ngIf="row.showTitle" class="links-row text-muted">{{row.title}}</h6>
+                <p *ngIf="row.showDescription" class="card-text">{{row.description}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <column-placeholder #columnPlaceholder
+                                 *ngFor="let column of row.columns"
+                                [column]="column"
+                                [rowComponent]="this"
+                                [pageComponent]="undefined"
+                                class="col-md-{{column.columnWidth}}"
+                                >
+            </column-placeholder>
+        </div>
+    </div>
+</div>
+

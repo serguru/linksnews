@@ -1,0 +1,70 @@
+﻿Nice to have features
+
+Implement a scheduled task to update cache
+
+Inspect db calls for AsNoTRacking
+
+Why does pages deleting take so much time?
+
+unsaved changes check for non modal pages
+http://stackoverflow.com/questions/35922071/angular-2-warn-user-of-unsaved-changes-before-leaving-page
+
+
+disable cancel & save if no changes made in my account
+
+check for changes in editors
+
+animate navbar hiding
+
+what is Do Not Track signals / browser mechanism?
+
+unsubscribe option is required
+
+make modals close on esc
+
+create a modal form to view a big image
+
+add help button where it makes sense
+
+add icons to buttons where appropriate
+
+limit user access using router guard and CanActivate
+Possible implementation: https://medium.com/@blacksonic86/angular-2-authentication-revisited-611bf7373bf9#.7a3vhhfhd
+
+implement a selected header logic on scroll in help
+
+add rating to a page
+
+add icons to dialogs
+
+make services' methods asynchronious where possible
+
+implement account archiving to json on account delete
+
+implement an email registration verification step
+
+implement a system of notifying users over the main site menu
+
+show page's image in the list
+
+
+highlight the current item in sidebar on scroll help content
+
+reduce columns padding in edit mode
+
+scroll into view on news sources select
+
+show refresh indicator and a last refresh time
+
+Think about defence against attacks
+
+Serve images outside wwwroot using a controllere
+
+Add an ability to communicate for users possibly via pages
+
+
+Add gender and age to the account
+
+Implement separate scrolling for page's columns
+
+Add and show page language

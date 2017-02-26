@@ -1,0 +1,46 @@
+﻿<div class="row form-group">
+    <div class="btn-group btn-group col-md-7" role="group">
+        <button type="button" class="btn btn-secondary"
+            [disabled]="column.rows.length > 100"
+            (click)="column.addNewRow()">
+            {{'Add' | translate}}
+        </button>
+        <button type="button" class="btn btn-secondary"
+            [disabled]="!column.selectedRow"
+            (click)="column.deleteRow(column.selectedRow)">
+            {{'Delete' | translate}}
+        </button>
+    </div>
+    <div class="col-md-5">
+        <div class="btn-group btn-group pull-right" role="group">
+            <button type="button" class="btn btn-secondary"
+                [disabled]="!column.selectedRow || column.topmostRowSelected"
+                (click)="column.shiftSelectedRowUp()">
+                {{'Up' | translate}}
+            </button>
+            <button type="button" class="btn btn-secondary"
+                [disabled]="!column.selectedRow || column.lowermostRowSelected"
+                (click)="column.shiftSelectedRowDown()">
+                {{'Down' | translate}}
+            </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="column && column.rows.length === 0" class="row links-presenter-list">
+    <div class="col-xs-12">
+        <div class="container-fluid links-presenter">
+            <div class="row flex-items-xs-middle flex-items-xs-center links-height-100">
+                <div class="col-xs-12 text-xs-center links-pale-text">
+                    {{'no rows' | translate}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="column && column.rows.length > 0" class="row links-presenter-list">
+    <div class="col-xs-12">
+        <row-presenter-placeholder *ngFor="let row of column.rows" [column]="column" [row]="row"></row-presenter-placeholder>
+    </div>
+</div>

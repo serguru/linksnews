@@ -1,0 +1,80 @@
+<div *ngIf="link && (!editMode || editMode && columnComponent.column.columnTypeId == 1)" 
+     class="links-link {{editMode ? 'links-link-edit' : ''}}"
+     [style.display]="columnComponent.column.viewModeId == 1 ? '':'inline-table'">
+
+    <div [hidden]="!link.showAd || editMode" #adPlaceholder class="links-ad"></div>
+
+
+    <div *ngIf="editMode" [style.max-width]="columnComponent.column.viewModeId == 2 ? '100px':''">
+        <div class="row">
+            <div class="col-xs-8">
+                <button class="btn-link links-pale-text" style="padding: 0px" (click)="openLinkEditor()"
+                   title="{{'edit link' | translate}}">{{'link' | translate}}</button>
+            </div>
+            <div class="col-xs-4 text-sm-right">
+                <i class="fa fa-edit fa-ajust" aria-hidden="true"
+                   (click)="openLinkEditor()"
+                   title="{{'edit link' | translate}}"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{link.title}}
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!editMode && link.viewModeId == 1" class="row">
+        <div class="col-xs-12">
+            <table>
+                <tr>
+                    <td *ngIf="link.showImage && link.imageUrl" style="width: 150px; text-align: center;">
+                        <a  href="{{link.href}}" target="_blank">
+                            <img [src]="link.imageUrl" style="max-height: 150px; max-width: 150px" /> <!--class="img-thumbnail"-->
+                        </a>
+                    </td>
+                    <td style="padding-left: 10px">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="{{link.href}}" target="_blank">{{link.title}}</a>
+                                </td>
+                            </tr>
+                            <tr *ngIf="link.showDescription">
+                                <td>
+                                    {{link.description}}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <table *ngIf="!editMode && link.viewModeId == 2" class="links-tile-table">
+        <tr *ngIf="link.showImage && link.imageUrl">
+            <td style="text-align: center">
+                <a href="{{link.href}}" target="_blank">
+                    <img [src]="link.imageUrl" style="max-height: 250px" />
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="{{link.href}}" target="_blank">{{link.title}}</a>
+            </td>
+        </tr>
+        <tr *ngIf="link.showDescription">
+            <td>
+                {{link.description}}
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+
+<!--<link-editor-placeholder #linkEditor *ngIf="editMode && columnComponent.column.columnTypeId == 1" 
+                         [link]="link" [linkComponent]="this"></link-editor-placeholder>-->
+

@@ -1,0 +1,57 @@
+<div class="links-column {{editMode ? 'links-column-edit' : ''}}">
+
+    <div #adPlaceholder [hidden]="!column.showAd || editMode"></div>
+
+    <div *ngIf="editMode" class="row">
+        <div class="col-xs-8">
+            <button class="btn-link links-pale-text" style="padding: 0px" (click)="openColumnEditor()"
+                    title="{{'edit column' | translate}}">
+                {{'column' | translate}}
+            </button>
+        </div>
+        <div class="col-xs-4 text-sm-right">
+            <i class="fa fa-edit fa-ajust" aria-hidden="true"
+               (click)="openColumnEditor()"
+               title="{{'edit column' | translate}}"></i>
+        </div>
+    </div>
+    <div *ngIf="editMode" class="row">
+        <div class="col-xs-12">
+            <h6 class="card-title text-muted">{{column.title}}</h6>
+        </div>
+    </div>
+
+    <div *ngIf="!editMode" class="row">
+        <div class="col-md-12">
+            <table>
+                <tr>
+                    <td *ngIf="column.showImage && column.imageUrl" style="width: 150px; text-align: center;">
+                        <img [src]="column.imageUrl" style="max-height: 150px; max-width: 150px" />
+                    </td>
+                    <td [style.padding-left]="column.showImage && column.imageUrl ? '10px':''">
+                        <table>
+                            <tr *ngIf="column.showTitle">
+                                <td>
+                                    <h6 *ngIf="column.showTitle" class="text-muted">{{column.title}}</h6>
+                                </td>
+                            </tr>
+                            <tr *ngIf="column.showDescription">
+                                <td>
+                                    {{column.description}}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div *ngIf="column.columnTypeId == 3 && column.rows">
+        <row-placeholder *ngFor="let row of column.rows" [row]="row" [columnComponent]="this"></row-placeholder>
+    </div>
+
+    <div *ngIf="column.columnTypeId != 3 && column.links" style="vertical-align: top">
+        <link-placeholder *ngFor="let link of column.links" [link]="link" [columnComponent]="this"></link-placeholder>
+    </div>
+</div>

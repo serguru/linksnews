@@ -1,0 +1,1508 @@
+﻿[
+  {
+    "Name": "Features",
+    "Translates": [
+      {
+        "Name": "Возможности",
+        "TranslateVersions": [
+          {
+            "Version": "Home",
+            "Name": "Особенности"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Docs",
+    "Translates": [
+      {
+        "Name": "Документация"
+      }
+    ]
+  },
+  {
+    "Name": "Home",
+    "Translates": [
+      {
+        "Name": "Дом",
+        "TranslateVersions": [
+          {
+            "Version": "Page",
+            "Name": "Домашняя страница"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Language",
+    "Translates": [
+      {
+        "Name": "Язык"
+      }
+    ]
+  },
+  {
+    "Name": "News",
+    "Translates": [
+      {
+        "Name": "Новости"
+      }
+    ]
+  },
+  {
+    "Name": "Account",
+    "Translates": [
+      {
+        "Name": "Аккаунт",
+        "TranslateVersions": [
+          {
+            "Version": "Financial",
+            "Name": "Счет"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "UnderConstruction",
+    "Translates": [
+      {
+        "Name": "В разработке",
+        "TranslateVersions": [
+          {
+            "Version": "Ext",
+            "Name": " в разработке"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "My Links",
+    "Translates": [
+      {
+        "Name": "Мои ссылки"
+      }
+    ]
+  },
+  {
+    "Name": "Public Links",
+    "Translates": [
+      {
+        "Name": "Публичные ссылки"
+      }
+    ]
+  },
+  {
+    "Name": "Log in",
+    "Translates": [
+      {
+        "Name": "Авторизоваться",
+        "TranslateVersions": [
+          {
+            "Version": "Log In",
+            "Name": "Авторизоваться"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Log out",
+    "Translates": [
+      {
+        "Name": "Выйти",
+        "TranslateVersions": [
+          {
+            "Version": "Log Out",
+            "Name": "Выйти"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Edit",
+    "Translates": [
+      {
+        "Name": "Редактировать"
+      }
+    ]
+  },
+  {
+    "Name": "Page save",
+    "Translates": [
+      {
+        "Name": "Сохранение страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Changes have been saved",
+    "Translates": [
+      {
+        "Name": "Изменения сохранены"
+      }
+    ]
+  },
+  {
+    "Name": "Row Title",
+    "Translates": [
+      {
+        "Name": "Заголовок строки"
+      }
+    ]
+  },
+  {
+    "Name": "Column Title",
+    "Translates": [
+      {
+        "Name": "Заголовок колонки"
+      }
+    ]
+  },
+  {
+    "Name": "edit column",
+    "Translates": [
+      {
+        "Name": "редактировать колонку",
+        "TranslateVersions": [
+          {
+            "Version": "Edit column",
+            "Name": "Редактирование колонки"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Failed saving page. Error message: {0}",
+    "Translates": [
+      {
+        "Name": "Невозможно сохраненить страницу. Сообщение об ошибке: {0}"
+      }
+    ]
+  },
+  {
+    "Name": "Public access",
+    "Translates": [
+      {
+        "Name": "Публичный доступ"
+      }
+    ]
+  },
+  {
+    "Name": "No public access",
+    "Translates": [
+      {
+        "Name": "Нет публичного доступа"
+      }
+    ]
+  },
+  {
+    "Name": "Show title",
+    "Translates": [
+      {
+        "Name": "Показывать заголовок"
+      }
+    ]
+  },
+  {
+    "Name": "Do not show title",
+    "Translates": [
+      {
+        "Name": "Не показывать заголовок"
+      }
+    ]
+  },
+  {
+    "Name": "Show description",
+    "Translates": [
+      {
+        "Name": "Показывать описание"
+      }
+    ]
+  },
+  {
+    "Name": "Do not show description",
+    "Translates": [
+      {
+        "Name": "Не показывать описание"
+      }
+    ]
+  },
+  {
+    "Name": "Name",
+    "Translates": [
+      {
+        "Name": "Имя"
+      }
+    ]
+  },
+  {
+    "Name": "Title",
+    "Translates": [
+      {
+        "Name": "Заголовок"
+      }
+    ]
+  },
+  {
+    "Name": "Description",
+    "Translates": [
+      {
+        "Name": "Описание"
+      }
+    ]
+  },
+  {
+    "Name": "Upload Image",
+    "Translates": [
+      {
+        "Name": "Загрузить изображение"
+      }
+    ]
+  },
+  {
+    "Name": "File is empty",
+    "Translates": [
+      {
+        "Name": "Файл пустой"
+      }
+    ]
+  },
+  {
+    "Name": "File size exceeds a limit 1 Mb",
+    "Translates": [
+      {
+        "Name": "Размер файла превышает ограничение 1 Мб"
+      }
+    ]
+  },
+  {
+    "Name": "File upload error",
+    "Translates": [
+      {
+        "Name": "Ошибка загрузки файла"
+      }
+    ]
+  },
+  {
+    "Name": "No image",
+    "Translates": [
+      {
+        "Name": "Изображение отсутствует"
+      }
+    ]
+  },
+  {
+    "Name": "Make Narrower",
+    "Translates": [
+      {
+        "Name": "Сделать уже"
+      }
+    ]
+  },
+  {
+    "Name": "Make Wider",
+    "Translates": [
+      {
+        "Name": "Сделать шире"
+      }
+    ]
+  },
+  {
+    "Name": "Show image",
+    "Translates": [
+      {
+        "Name": "Показывать изображение"
+      }
+    ]
+  },
+  {
+    "Name": "Do not show image",
+    "Translates": [
+      {
+        "Name": "Не показывать изображение"
+      }
+    ]
+  },
+  {
+    "Name": "Left",
+    "Translates": [
+      {
+        "Name": "Левый"
+      }
+    ]
+  },
+  {
+    "Name": "Right",
+    "Translates": [
+      {
+        "Name": "Правый"
+      }
+    ]
+  },
+  {
+    "Name": "To Left",
+    "Translates": [
+      {
+        "Name": "Влево"
+      }
+    ]
+  },
+  {
+    "Name": "To Right",
+    "Translates": [
+      {
+        "Name": "Вправо"
+      }
+    ]
+  },
+  {
+    "Name": "Add",
+    "Translates": [
+      {
+        "Name": "Добавить"
+      }
+    ]
+  },
+  {
+    "Name": "Update",
+    "Translates": [
+      {
+        "Name": "Изменить"
+      }
+    ]
+  },
+  {
+    "Name": "Delete",
+    "Translates": [
+      {
+        "Name": "Удалить"
+      }
+    ]
+  },
+  {
+    "Name": "General",
+    "Translates": [
+      {
+        "Name": "Общего характера"
+      }
+    ]
+  },
+  {
+    "Name": "Science",
+    "Translates": [
+      {
+        "Name": "Наука"
+      }
+    ]
+  },
+  {
+    "Name": "Entertainment",
+    "Translates": [
+      {
+        "Name": "Развлечения"
+      }
+    ]
+  },
+  {
+    "Name": "United States",
+    "Translates": [
+      {
+        "Name": "США"
+      }
+    ]
+  },
+  {
+    "Name": "Australia",
+    "Translates": [
+      {
+        "Name": "Австралия"
+      }
+    ]
+  },
+  {
+    "Name": "United Kingdom",
+    "Translates": [
+      {
+        "Name": "Великобритания"
+      }
+    ]
+  },
+  {
+    "Name": "English",
+    "Translates": [
+      {
+        "Name": "Английский"
+      }
+    ]
+  },
+  {
+    "Name": "German",
+    "Translates": [
+      {
+        "Name": "Немецкий"
+      }
+    ]
+  },
+  {
+    "Name": "French",
+    "Translates": [
+      {
+        "Name": "Французский"
+      }
+    ]
+  },
+  {
+    "Name": "Russian",
+    "Translates": [
+      {
+        "Name": "Русский"
+      }
+    ]
+  },
+  {
+    "Name": "My Pages",
+    "Translates": [
+      {
+        "Name": "Мои страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Enjoy your favorite",
+    "Translates": [
+      {
+        "Name": "Закладки на ваши любимые"
+      }
+    ]
+  },
+  {
+    "Name": "web links and news bookmarked",
+    "Translates": [
+      {
+        "Name": "веб ссылки и новости на одной странице"
+      }
+    ]
+  },
+  {
+    "Name": "Keep links handy. Fresh news right on your homepage. Publish your pages.",
+    "Translates": [
+      {
+        "Name": "Ссылки всегда под рукой. Свежие новости на домашней странице. Опубликуйте свои страницы."
+      }
+    ]
+  },
+  {
+    "Name": "Site News",
+    "Translates": [
+      {
+        "Name": "Новости сайта"
+      }
+    ]
+  },
+  {
+    "Name": "Contact Us",
+    "Translates": [
+      {
+        "Name": "Свяжитесь с нами"
+      }
+    ]
+  },
+  {
+    "Name": "Privacy Policy",
+    "Translates": [
+      {
+        "Name": "Политика конфиденциальности"
+      }
+    ]
+  },
+  {
+    "Name": "Terms & Conditions",
+    "Translates": [
+      {
+        "Name": "Правила и условия"
+      }
+    ]
+  },
+  {
+    "Name": "Categories",
+    "Translates": [
+      {
+        "Name": "Категории"
+      }
+    ]
+  },
+  {
+    "Name": "Help",
+    "Translates": [
+      {
+        "Name": "Справка"
+      }
+    ]
+  },
+  {
+    "Name": "Powered by",
+    "Translates": [
+      {
+        "Name": "Поддерживается"
+      }
+    ]
+  },
+  {
+    "Name": "Get Started",
+    "Translates": [
+      {
+        "Name": "Начать"
+      }
+    ]
+  },
+  {
+    "Name": "Login required",
+    "Translates": [
+      {
+        "Name": "Требуется авторизация"
+      }
+    ]
+  },
+  {
+    "Name": "Please log in to have accsess to your own pages",
+    "Translates": [
+      {
+        "Name": "Пожалуйста авторизуйтесь чтобы получить доступ к своим страницам"
+      }
+    ]
+  },
+  {
+    "Name": "Login",
+    "Translates": [
+      {
+        "Name": "Логин"
+      }
+    ]
+  },
+  {
+    "Name": "Password",
+    "Translates": [
+      {
+        "Name": "Пароль"
+      }
+    ]
+  },
+  {
+    "Name": "Register",
+    "Translates": [
+      {
+        "Name": "Зарегистрироваться"
+      }
+    ]
+  },
+  {
+    "Name": "My Account",
+    "Translates": [
+      {
+        "Name": "Мой аккаунт"
+      }
+    ]
+  },
+  {
+    "Name": "First Name",
+    "Translates": [
+      {
+        "Name": "Имя"
+      }
+    ]
+  },
+  {
+    "Name": "Last Name",
+    "Translates": [
+      {
+        "Name": "Фамилия"
+      }
+    ]
+  },
+  {
+    "Name": "News refresh interval",
+    "Translates": [
+      {
+        "Name": "Интервал обновления новостей"
+      }
+    ]
+  },
+  {
+    "Name": "Email",
+    "Translates": [
+      {
+        "Name": "Электронная почта"
+      }
+    ]
+  },
+  {
+    "Name": "Telephone",
+    "Translates": [
+      {
+        "Name": "Телефон"
+      }
+    ]
+  },
+  {
+    "Name": "Comment",
+    "Translates": [
+      {
+        "Name": "Комментарий"
+      }
+    ]
+  },
+  {
+    "Name": "Address",
+    "Translates": [
+      {
+        "Name": "Адрес"
+      }
+    ]
+  },
+  {
+    "Name": "Select image",
+    "Translates": [
+      {
+        "Name": "Выбрать изображение"
+      }
+    ]
+  },
+  {
+    "Name": "Save",
+    "Translates": [
+      {
+        "Name": "Сохранить"
+      }
+    ]
+  },
+  {
+    "Name": "Cancel",
+    "Translates": [
+      {
+        "Name": "Отменить"
+      }
+    ]
+  },
+  {
+    "Name": "Business",
+    "Translates": [
+      {
+        "Name": "Бизнес"
+      }
+    ]
+  },
+  {
+    "Name": "Gaming",
+    "Translates": [
+      {
+        "Name": "Игры"
+      }
+    ]
+  },
+  {
+    "Name": "Music",
+    "Translates": [
+      {
+        "Name": "Музыка"
+      }
+    ]
+  },
+  {
+    "Name": "Sport",
+    "Translates": [
+      {
+        "Name": "Спорт"
+      }
+    ]
+  },
+  {
+    "Name": "Technology",
+    "Translates": [
+      {
+        "Name": "Технологии"
+      }
+    ]
+  },
+  {
+    "Name": "Loading...",
+    "Translates": [
+      {
+        "Name": "Загрузка..."
+      }
+    ]
+  },
+  {
+    "Name": "edit page",
+    "Translates": [
+      {
+        "Name": "редактировать страницу",
+        "TranslateVersions": [
+          {
+            "Version": "Edit page",
+            "Name": "Редактирование страницы"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "edit link",
+    "Translates": [
+      {
+        "Name": "редактировать ссылку",
+        "TranslateVersions": [
+          {
+            "Version": "Edit link",
+            "Name": "Редактировать ссылку"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Column type",
+    "Translates": [
+      {
+        "Name": "Тип колонки"
+      }
+    ]
+  },
+  {
+    "Name": "Up",
+    "Translates": [
+      {
+        "Name": "Вверх"
+      }
+    ]
+  },
+  {
+    "Name": "Down",
+    "Translates": [
+      {
+        "Name": "Вниз"
+      }
+    ]
+  },
+  {
+    "Name": "Rows",
+    "Translates": [
+      {
+        "Name": "Строки"
+      }
+    ]
+  },
+  {
+    "Name": "Links",
+    "Translates": [
+      {
+        "Name": "Ссылки"
+      }
+    ]
+  },
+  {
+    "Name": "No file name",
+    "Translates": [
+      {
+        "Name": "Нет имени файла"
+      }
+    ]
+  },
+  {
+    "Name": "Column save",
+    "Translates": [
+      {
+        "Name": "Сохранение колонки"
+      }
+    ]
+  },
+  {
+    "Name": "Link save",
+    "Translates": [
+      {
+        "Name": "Сохранение ссылки"
+      }
+    ]
+  },
+  {
+    "Name": "Row save",
+    "Translates": [
+      {
+        "Name": "Сохранение строки"
+      }
+    ]
+  },
+  {
+    "Name": "News source",
+    "Translates": [
+      {
+        "Name": "Источник новостей"
+      }
+    ]
+  },
+  {
+    "Name": "Add source",
+    "Translates": [
+      {
+        "Name": "Добавить источник",
+        "TranslateVersions": [
+          {
+            "Version": "Add Source",
+            "Name": "Добавить Источник"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Show news images",
+    "Translates": [
+      {
+        "Name": "Показывать изображения в новостях"
+      }
+    ]
+  },
+  {
+    "Name": "Show news descriptions",
+    "Translates": [
+      {
+        "Name": "Показывать описания в новостях"
+      }
+    ]
+  },
+  {
+    "Name": "Site is under construction",
+    "Translates": [
+      {
+        "Name": "Сайт в разработке"
+      }
+    ]
+  },
+  {
+    "Name": "Please come later",
+    "Translates": [
+      {
+        "Name": "Пожалуйста приходите позже"
+      }
+    ]
+  },
+  {
+    "Name": "Create new page",
+    "Translates": [
+      {
+        "Name": "Создать новую страницу"
+      }
+    ]
+  },
+  {
+    "Name": "Page Title",
+    "Translates": [
+      {
+        "Name": "Заголовок страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Link Name",
+    "Translates": [
+      {
+        "Name": "Название ссылки"
+      }
+    ]
+  },
+  {
+    "Name": "Page title is required",
+    "Translates": [
+      {
+        "Name": "Требуется заголовок страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Link name is required",
+    "Translates": [
+      {
+        "Name": "Требуется имя ссылки"
+      }
+    ]
+  },
+  {
+    "Name": "Link Address",
+    "Translates": [
+      {
+        "Name": "Адрес ссылки"
+      }
+    ]
+  },
+  {
+    "Name": "Link address is required",
+    "Translates": [
+      {
+        "Name": "Требуется адрес ссылки"
+      }
+    ]
+  },
+  {
+    "Name": "Page",
+    "Translates": [
+      {
+        "Name": "Страница",
+        "TranslateVersions": [
+          {
+            "Version": "page",
+            "Name": "страница"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Copy to My Pages",
+    "Translates": [
+      {
+        "Name": "Копировать в Мои страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Edit pages list",
+    "Translates": [
+      {
+        "Name": "Редактировать список страниц"
+      }
+    ]
+  },
+  {
+    "Name": "You have no pages yet",
+    "Translates": [
+      {
+        "Name": "У вас пока нет ни одной страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Please select My Pages -> Add from main menu to create one",
+    "Translates": [
+      {
+        "Name": "Чтобы создать страницу пожалуйста выберите Мои страницы -> Добавить в главном меню"
+      }
+    ]
+  },
+  {
+    "Name": "Forgot password",
+    "Translates": [
+      {
+        "Name": "Не помню пароль"
+      }
+    ]
+  },
+  {
+    "Name": "Authorizing...",
+    "Translates": [
+      {
+        "Name": "Авторизация..."
+      }
+    ]
+  },
+  {
+    "Name": "Please send us a message. We will send your new password to your email address.",
+    "Translates": [
+      {
+        "Name": "Пожалуйста пошлите нам сообщение. Мы пришлем вам новый пароль на адрес вашей электронной почты."
+      }
+    ]
+  },
+  {
+    "Name": "Subject",
+    "Translates": [
+      {
+        "Name": "Тема"
+      }
+    ]
+  },
+  {
+    "Name": "Your name",
+    "Translates": [
+      {
+        "Name": "Ваше имя"
+      }
+    ]
+  },
+  {
+    "Name": "Message",
+    "Translates": [
+      {
+        "Name": "Сообщение"
+      }
+    ]
+  },
+  {
+    "Name": "Send",
+    "Translates": [
+      {
+        "Name": "Послать"
+      }
+    ]
+  },
+  {
+    "Name": "Category",
+    "Translates": [
+      {
+        "Name": "Категория"
+      }
+    ]
+  },
+  {
+    "Name": "Pages",
+    "Translates": [
+      {
+        "Name": "Страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Authors",
+    "Translates": [
+      {
+        "Name": "Авторы"
+      }
+    ]
+  },
+  {
+    "Name": "News sources",
+    "Translates": [
+      {
+        "Name": "Источники новостей"
+      }
+    ]
+  },
+  {
+    "Name": "All categories",
+    "Translates": [
+      {
+        "Name": "Все категории"
+      }
+    ]
+  },
+  {
+    "Name": "Country",
+    "Translates": [
+      {
+        "Name": "Страна"
+      }
+    ]
+  },
+  {
+    "Name": "Source",
+    "Translates": [
+      {
+        "Name": "Источник"
+      }
+    ]
+  },
+  {
+    "Name": "Change password",
+    "Translates": [
+      {
+        "Name": "Изменить пароль"
+      }
+    ]
+  },
+  {
+    "Name": "Image",
+    "Translates": [
+      {
+        "Name": "Изображение"
+      }
+    ]
+  },
+  {
+    "Name": "Select",
+    "Translates": [
+      {
+        "Name": "Выбрать"
+      }
+    ]
+  },
+  {
+    "Name": "Website",
+    "Translates": [
+      {
+        "Name": "Интернет сайт"
+      }
+    ]
+  },
+  {
+    "Name": "List",
+    "Translates": [
+      {
+        "Name": "Список"
+      }
+    ]
+  },
+  {
+    "Name": "Tile",
+    "Translates": [
+      {
+        "Name": "Плитка"
+      }
+    ]
+  },
+  {
+    "Name": "Copying page",
+    "Translates": [
+      {
+        "Name": "Копирование страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Do you want to copy a page?",
+    "Translates": [
+      {
+        "Name": "Копировать страницу?"
+      }
+    ]
+  },
+  {
+    "Name": "leave edit mode",
+    "Translates": [
+      {
+        "Name": "завершить редактирование",
+        "TranslateVersions": [
+          {
+            "Version": "Leave edit mode",
+            "Name": "Завершить редактирование"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "column",
+    "Translates": [
+      {
+        "Name": "колонка",
+        "TranslateVersions": [
+          {
+            "Version": "Column",
+            "Name": "Колонка"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Columns",
+    "Translates": [
+      {
+        "Name": "Колонки"
+      }
+    ]
+  },
+  {
+    "Name": "Add column",
+    "Translates": [
+      {
+        "Name": "Добавить колонку"
+      }
+    ]
+  },
+  {
+    "Name": "All available space is occupied. To add a new column please make narrower one of the existing columns.",
+    "Translates": [
+      {
+        "Name": "Все доступное место занято. Чтобы добавить колонку пожалуйста сделайте более узкой одну из существующих колонок."
+      }
+    ]
+  },
+  {
+    "Name": "Saving a page...",
+    "Translates": [
+      {
+        "Name": "Сохранение страницы..."
+      }
+    ]
+  },
+  {
+    "Name": "View mode",
+    "Translates": [
+      {
+        "Name": "Режим отображения"
+      }
+    ]
+  },
+  {
+    "Name": "no links",
+    "Translates": [
+      {
+        "Name": "нет ссылок"
+      }
+    ]
+  },
+  {
+    "Name": "link",
+    "Translates": [
+      {
+        "Name": "ссылка"
+      }
+    ]
+  },
+  {
+    "Name": "edit row",
+    "Translates": [
+      {
+        "Name": "редактировать строку",
+        "TranslateVersions": [
+          {
+            "Version": "Edit row",
+            "Name": "Редактировать строку"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "no columns",
+    "Translates": [
+      {
+        "Name": "нет колонок"
+      }
+    ]
+  },
+  {
+    "Name": "no rows",
+    "Translates": [
+      {
+        "Name": "нет строк"
+      }
+    ]
+  },
+  {
+    "Name": "row",
+    "Translates": [
+      {
+        "Name": "строка",
+        "TranslateVersions": [
+          {
+            "Version": "Row",
+            "Name": "Строка"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "The page has been added to your pages",
+    "Translates": [
+      {
+        "Name": "Страница добавлена в ваши страницы"
+      }
+    ]
+  },
+  {
+    "Name": "Add page",
+    "Translates": [
+      {
+        "Name": "Добавить страницу"
+      }
+    ]
+  },
+  {
+    "Name": "Error",
+    "Translates": [
+      {
+        "Name": "Ошибка"
+      }
+    ]
+  },
+  {
+    "Name": "Save account",
+    "Translates": [
+      {
+        "Name": "Сохранение аккаунта"
+      }
+    ]
+  },
+  {
+    "Name": "Name required",
+    "Translates": [
+      {
+        "Name": "Требуется имя"
+      }
+    ]
+  },
+  {
+    "Name": "Name is required",
+    "Translates": [
+      {
+        "Name": "Требуется имя"
+      }
+    ]
+  },
+  {
+    "Name": "Title is required",
+    "Translates": [
+      {
+        "Name": "Требуется заголовок"
+      }
+    ]
+  },
+  {
+    "Name": "Title required",
+    "Translates": [
+      {
+        "Name": "Требуется заголовок"
+      }
+    ]
+  },
+  {
+    "Name": "Warning",
+    "Translates": [
+      {
+        "Name": "Предупреждение"
+      }
+    ]
+  },
+  {
+    "Name": "Published page must belong to at least one category",
+    "Translates": [
+      {
+        "Name": "Опубликованная страница должна принадлежать как минимум к одной категории"
+      }
+    ]
+  },
+  {
+    "Name": "Title contains leading or trailing spaces",
+    "Translates": [
+      {
+        "Name": "Заголовок содержит пробелы в начале или в конце"
+      }
+    ]
+  },
+  {
+    "Name": "Url is required",
+    "Translates": [
+      {
+        "Name": "Требуется адрес (URL)"
+      }
+    ]
+  },
+  {
+    "Name": "Address (URL) is required",
+    "Translates": [
+      {
+        "Name": "Требуется адрес (URL)"
+      }
+    ]
+  },
+  {
+    "Name": "Address (URL) contains leading or trailing spaces",
+    "Translates": [
+      {
+        "Name": "Адрес (URL) содержит пробелы в начале или в конце"
+      }
+    ]
+  },
+  {
+    "Name": "Address (URL) must start with http://, https:// or file://",
+    "Translates": [
+      {
+        "Name": "Адрес (URL) должен начинаться с http://, https:// или file://"
+      }
+    ]
+  },
+  {
+    "Name": "Email is not valid",
+    "Translates": [
+      {
+        "Name": "Адрес электронной почты не является допустимым"
+      }
+    ]
+  },
+  {
+    "Name": "Delete account",
+    "Translates": [
+      {
+        "Name": "Удаление аккаунта"
+      }
+    ]
+  },
+  {
+    "Name": "Are you sure you want to delete your account?",
+    "Translates": [
+      {
+        "Name": "Вы уверены что хотите удалить свой аккаунт?"
+      }
+    ]
+  },
+  {
+    "Name": "Cannot login",
+    "Translates": [
+      {
+        "Name": "Невозможно авторизовать"
+      }
+    ]
+  },
+  {
+    "Name": "Page not found",
+    "Translates": [
+      {
+        "Name": "Страница не найдена"
+      }
+    ]
+  },
+  {
+    "Name": "Password confirm",
+    "Translates": [
+      {
+        "Name": "Подтверждение пароля"
+      }
+    ]
+  },
+  {
+    "Name": "Password confirm is required",
+    "Translates": [
+      {
+        "Name": "Требуется подтверждение пароля"
+      }
+    ]
+  },
+  {
+    "Name": "Password confirm contains wrong characters or spaces",
+    "Translates": [
+      {
+        "Name": "Подтверждение пароля содержит недопустимые символы или пробелы"
+      }
+    ]
+  },
+  {
+    "Name": "Password confirm must be at least 5 characters long",
+    "Translates": [
+      {
+        "Name": "Подтверждение пароля должно содержать минимум 5 символов"
+      }
+    ]
+  },
+  {
+    "Name": "Password confirm cannot be more than 100 characters long",
+    "Translates": [
+      {
+        "Name": "Подтверждение пароля не должно содержать более 100 символов"
+      }
+    ]
+  },
+  {
+    "Name": "Bookmark in two clicks",
+    "Translates": [
+      {
+        "Name": "Добавляйте закладки в два клика"
+      }
+    ]
+  }
+]

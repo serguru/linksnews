@@ -1,0 +1,9 @@
+﻿<div class="row" [style.display]="column.viewModeId == 2 ? 'inline-table':''"
+     [style.width]="column.viewModeId == 2 ? '150px':''">
+    <div class="col-md-12">
+        <div class="links-presenter links-row-presenter {{link.selected ? 'links-selected' : ''}}"
+            (click)="column.setLinkSelected(link)">
+            {{link.title}}
+        </div>
+    </div>
+</div>

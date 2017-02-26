@@ -1,0 +1,22 @@
+﻿<modal #modalNewsSources [style.z-index] = "zIndex" [keyboard]="false" [backdrop]="'static'"   
+       (onOpen)="onPopupOpen()">
+
+    <modal-header>
+        <div #header>
+            <h5 class="modal-title">{{'News Sources' | translate}}</h5>
+        </div>
+    </modal-header>
+    <modal-body>
+        <div [style.max-height]="maxHeight + 'px'" (window:resize)="onWindowResize()">
+            <news-sources-placeholder #newsSourcesComponent 
+                [selectable]="true" [showWait]="true" [columnEditor]="this.columnEditor"></news-sources-placeholder>
+        </div>
+    </modal-body>
+    <modal-footer>
+        <div #footer>
+            <button type="button" class="btn btn-default" (click)="selectNewsSource()">{{'Select' | translate}}</button>
+            <button type="button" class="btn btn-default" (click)="closePopup()">{{'Close' | translate}}</button>
+        </div>
+    </modal-footer>
+</modal>
+

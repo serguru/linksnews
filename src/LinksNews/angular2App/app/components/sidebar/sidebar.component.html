@@ -1,0 +1,38 @@
+<ul *ngIf="component && component.toString() === 'CategoriesComponent' && component.categories" class="list-group">
+    <!--{{category.selected ? 'active' : ''}}-->
+    <li *ngFor="let category of component.categories" class="list-group-item">
+        <!--<a *ngIf="category.id < 0" href="#" [routerLink]="['/categories']" 
+           routerLinkActive="links-active-link" [routerLinkActiveOptions]="{exact: true}">{{category.name | translate}}</a>
+        <a *ngIf="category.id >= 0" href="#" [routerLink]="['/categories', category.name]"
+           routerLinkActive="links-active-link" [routerLinkActiveOptions]="{exact: true}">{{category.name | translate}}</a>-->
+        <a href="#" [routerLink]="['/categories', category.name]"
+           routerLinkActive="links-active-link" [routerLinkActiveOptions]="{exact: true}">
+            {{(category.name && category.name.toLowerCase() === 'all' ? 'All categories' : category.name) | translate}}
+        </a>
+    </li>
+</ul>
+
+
+<!--this does not work with fragments: routerLinkActive="links-active-link" [routerLinkActiveOptions]="{exact: true}"-->
+<ul *ngIf="component && component.toString() === 'HelpComponent' && component.sections" class="list-group">
+
+    <li *ngFor="let section of component.sections" class="list-group-item">
+        <a href='#' [routerLink]="['/help']" fragment="{{section.id}}" 
+           (click)="component.onAnchorClick($event, section.id)"
+           >{{section.name}}</a>
+    </li>
+</ul>
+
+<ul *ngIf="component && component.toString() === 'NewsComponent' && component.newsSourcesWithHeader" class="list-group">
+    <li *ngFor="let source of component.newsSourcesWithHeader" class="list-group-item">
+        <!--<a *ngIf="source.id < 0" href="#" [routerLink]="['/news']" 
+           routerLinkActive="links-active-link" [routerLinkActiveOptions]="{exact: true}">{{source.newsSourceId | translate}}</a>
+        <a *ngIf="source.id >= 0" href="#" [routerLink]="['/news', source.newsSourceId]"
+           routerLinkActive="links-active-link" [routerLinkActiveOptions]="{exact: true}">{{source.newsSourceId}}</a>-->
+        <a href="#" [routerLink]="['/news', source.newsSourceId]"
+           routerLinkActive="links-active-link" [routerLinkActiveOptions]="{exact: true}">
+            {{source.newsSourceId && source.newsSourceId.toLowerCase() === 'sources' ? ('News sources' | translate) : source.newsSourceId}}
+        </a>
+    </li>
+</ul>
+

@@ -1,0 +1,15 @@
+﻿<modal #modalDialog  [keyboard]="true" [backdrop]="'static'" [style.z-index] ="zIndex"
+       (onOpen)="onDialogOpen()" (onDismiss)="onDialogDismiss()" (onClose)="onDialogClose()" >
+    <modal-header *ngIf="config">
+        <h5 class="modal-title">{{config.header | translate}}</h5>
+    </modal-header>
+    <modal-body *ngIf="config">
+        {{config.content | translate}}
+    </modal-body>
+    <!--<modal-footer *ngIf="config">
+        {{config.footer | translate}}
+    </modal-footer>-->
+    <modal-footer *ngIf="config && config.buttons">
+        <dialog-button-placeholder *ngFor="let button of config.buttons" [config]="button" [parent]="this"></dialog-button-placeholder>
+    </modal-footer>
+</modal>

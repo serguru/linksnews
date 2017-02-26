@@ -1,0 +1,14 @@
+<pages-list-placeholder *ngIf="pages && pages.length > 0" #pagesListComponent [pages]="pages"
+                        [viewMode]="viewMode"></pages-list-placeholder>
+
+<div *ngIf="pages && pages.length === 0" class="links-height-80">
+    <div class="row flex-items-xs-middle flex-items-xs-center links-height-100">
+        <div class="col-xs-12 text-xs-center">
+            <h5>{{'You have no pages yet' | translate}}</h5>
+            <h5>{{'Please select My Pages -> Add from main menu to create one' | translate}}</h5>
+        </div>
+    </div>
+</div>
+
+<my-pages-editor-placeholder #myPagesEditor></my-pages-editor-placeholder>
+<page-create-placeholder #pageCreate></page-create-placeholder>

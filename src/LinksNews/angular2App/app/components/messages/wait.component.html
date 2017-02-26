@@ -1,0 +1,18 @@
+﻿<modal #modalDialog  [keyboard]="true" [backdrop]="'static'" [style.z-index] ="zIndex"
+       (onOpen)="onDialogOpen()" (onDismiss)="onDialogDismiss()" (onClose)="onDialogClose()" >
+    <modal-body>
+        <div class="links-wait">
+            <div class="container-fluid  links-height-100">
+                <div class="row flex-items-xs-middle flex-items-xs-center links-height-100">
+                    <div class="col-xs-12 text-xs-center">
+                        <h6>{{message | translate}}</h6>
+                        <br />
+                        <i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </modal-body>
+</modal>
+
+

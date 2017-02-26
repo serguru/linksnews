@@ -1,0 +1,147 @@
+﻿<div class="row {{alignVertical ? 'flex-items-md-middle' : ''}} flex-items-xs-center links-height-100 links-page-column"
+     (window:resize)="onWindowResize($event)">
+    <div class="col-sm-10 col-md-8 col-lg-6">
+        <form class="form" #registerForm="ngForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="username">{{'Login' | translate}}</label>
+                                <input type="text" class="form-control input-lg" placeholder="{{'Login required' | translate}}"
+                                       [(ngModel)]="registration.login"
+                                       name="username" id="username" #username="ngModel" [pattern]="pattern.login" required
+                                       minlength="3" maxlength="100" wrongSpace />
+                                <div *ngIf="username.errors && username.dirty && username.touched" class="alert alert-danger">
+                                    <div [hidden]="!username.errors['pattern']">
+                                        {{'Login contains wrong characters or spaces' | translate}}
+                                    </div>
+                                    <div [hidden]="!username.errors['required']">
+                                        {{'Login is required' | translate}}
+                                    </div>
+                                    <div [hidden]="!username.errors['minlength']">
+                                        {{'Login must be at least 3 characters long' | translate}}
+                                    </div>
+                                    <div [hidden]="!username.errors['maxlength']">
+                                        {{'Login cannot be more than 100 characters long' | translate}}
+                                    </div>
+                                    <div [hidden]="!username.errors['wrongSpace']">
+                                        {{'Login contains leading or trailing spaces' | translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="password">{{'Password' | translate}}</label>
+
+                                <input type="password" class="form-control input-lg" placeholder="{{'Password required' | translate}}" [(ngModel)]="registration.password"
+                                       name="password" #password="ngModel" [pattern]="pattern.password" required
+                                       minlength="5" maxlength="100" />
+                                <div *ngIf="password.touched && password.dirty && password.errors" class="alert alert-danger">
+                                    <div [hidden]="!password.errors['pattern']">
+                                        {{'Password contains wrong characters or spaces' | translate}}
+                                    </div>
+                                    <div [hidden]="!password.errors['required']">
+                                        {{'Password is required' | translate}}
+                                    </div>
+                                    <div [hidden]="!password.errors['minlength']">
+                                        {{'Password must be at least 5 characters long' | translate}}
+                                    </div>
+                                    <div [hidden]="!password.errors['maxlength']">
+                                        {{'Password cannot be more than 100 characters long' | translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="passwordConfirm">{{'Password confirmation' | translate}}</label>
+                                <input type="password" class="form-control input-lg" placeholder="{{'Password confirmation required' | translate}}" [(ngModel)]="registration.passwordConfirm"
+                                       name="passwordConfirm" #passwordConfirm="ngModel" [pattern]="pattern.password" required
+                                       minlength="5" maxlength="100" />
+                                <div *ngIf="passwordConfirm.touched && passwordConfirm.dirty && passwordConfirm.errors" class="alert alert-danger">
+                                    <div [hidden]="!passwordConfirm.errors['pattern']">
+                                        {{'Password confirmation contains wrong characters or spaces' | translate}}
+                                    </div>
+                                    <div [hidden]="!passwordConfirm.errors['required']">
+                                        {{'Password confirmation is required' | translate}}
+                                    </div>
+                                    <div [hidden]="!passwordConfirm.errors['minlength']">
+                                        {{'Password confirmation must be at least 5 characters long' | translate}}
+                                    </div>
+                                    <div [hidden]="!passwordConfirm.errors['maxlength']">
+                                        {{'Password confirmation cannot be more than 100 characters long' | translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="email">{{'Email' | translate}}</label>
+                                <input type="email" class="form-control input-lg" placeholder="{{'Email required' | translate}}" [(ngModel)]="registration.email"
+                                       name="email" #email="ngModel" required [pattern]="pattern.email" />
+                                <div *ngIf="email.touched && email.dirty && email.errors" class="alert alert-danger">
+                                    <div [hidden]="!email.errors['pattern']">
+                                        {{'Email is not valid' | translate}}
+                                    </div>
+                                    <div [hidden]="!email.errors['required']">
+                                        {{'Email is required' | translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="firstName">{{'First name' | translate}}</label>
+                                <input type="text" class="form-control input-lg" placeholder="{{'First name' | translate}}"
+                                       [(ngModel)]="registration.firstName"
+                                       name="firstName" id="firstName" #firstName="ngModel" wrongSpace />
+                                <div *ngIf="firstName.touched && firstName.dirty && firstName.errors" class="alert alert-danger">
+                                    <div [hidden]="!firstName.errors['wrongSpace']">
+                                        {{'First name contains leading or trailing spaces' | translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="lastName">{{'Last name' | translate}}</label>
+                                <input type="text" class="form-control input-lg" placeholder="{{'Last name' | translate}}"
+                                       [(ngModel)]="registration.lastName"
+                                       name="lastName" id="lastName" #lastName="ngModel" wrongSpace />
+                                <div *ngIf="lastName.touched && lastName.dirty && lastName.errors" class="alert alert-danger">
+                                    <div [hidden]="!lastName.errors['wrongSpace']">
+                                        {{'Last name contains leading or trailing spaces' | translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" (click)="register()" [disabled]="!registerForm.form.valid">
+                    {{'Register' | translate}}
+                </button>
+                <span class="pull-right">
+                    <a [routerLink]="['/login']">{{'Log in' | translate}}</a>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+

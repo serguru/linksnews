@@ -1,0 +1,59 @@
+﻿<modal #modalRowEditor [style.z-index]="zIndex" [keyboard]="false" [backdrop]="'static'" 
+       (onOpen)="onEditorOpen()" (onDismiss)="onEditorDismiss()">
+    <form class="form" #rowForm="ngForm">
+        <modal-header *ngIf="row2edit">
+            <div #header>
+                <h5 class="modal-title" *ngIf="rowComponent">{{(rowComponent.row.columnId ? 'edit row.Edit row' : 'Edit page') | translate}} {{rowComponent.row.title}}</h5>
+            </div>
+        </modal-header>
+        <modal-body *ngIf="row2edit && rowComponent && rowComponent.row.columnId">
+            <div [style.max-height]="maxHeight + 'px'" (window:resize)="onWindowResize()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="title">{{'Title' | translate}}</label>
+                            <input type="text" class="form-control" id="title" name="title" #title="ngModel"
+                                   placeholder="{{'Title is required' | translate}}"
+                                   [(ngModel)]="row2edit.title" required maxlength="100" wrongSpace />
+                            <div *ngIf="title.errors && title.dirty && title.touched" class="alert alert-danger">
+                                <div [hidden]="!title.errors['required']">
+                                    {{'Title is required' | translate}}
+                                </div>
+                                <div [hidden]="!title.errors['wrongSpace']">
+                                    {{'Title contains leading or trailing spaces' | translate}}
+                                </div>
+                                <div [hidden]="!title.errors['maxlength']">
+                                    {{'Title cannot be more than 100 characters long' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"
+                                       [(ngModel)]="this.row2edit.showTitle"
+                                       name="showTitle" />
+                                {{'Show title' | translate}}
+                            </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <column-list-editor-placeholder [row]="row2edit"></column-list-editor-placeholder>
+                    </div>
+                </div>
+            </div>
+        </modal-body>
+        <modal-footer *ngIf="row2edit">
+            <div #footer>
+                <button type="button" class="btn btn-default" (click)="saveRow()" [disabled]="!rowForm.form.valid">{{'Save' | translate}}</button>
+                <button type="button" class="btn btn-default" (click)="closeRowEditor()">{{'Cancel' | translate}}</button>
+            </div>
+        </modal-footer>
+    </form>
+</modal>
+
+
+

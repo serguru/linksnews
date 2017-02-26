@@ -1,0 +1,4 @@
+﻿TODO
+
+Fix a bug if no news source while column type is news - show a message news source is required
+

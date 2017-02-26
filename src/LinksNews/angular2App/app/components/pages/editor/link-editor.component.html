@@ -1,0 +1,82 @@
+﻿<modal #modalLinkEditor [style.z-index]="zIndex" [keyboard]="false" [backdrop]="'static'"  
+       (onOpen)="onEditorOpen()" (onDismiss)="onEditorDismiss()">
+    <form class="form" #linkForm="ngForm" *ngIf="linkComponent">
+        <modal-header *ngIf="link2edit">
+            <div #header>
+                <h4 class="modal-title">{{'edit link.Edit link' | translate}} {{linkComponent.link.title}}</h4>
+            </div>
+        </modal-header>
+        <modal-body *ngIf="link2edit">
+            <div [style.max-height]="maxHeight + 'px'" (window:resize)="onWindowResize()">
+                <file-upload-placeholder #uploader [parent]="link2edit"></file-upload-placeholder>
+
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label for="title">{{'Title' | translate}}</label>
+                        <input type="text" class="form-control" id="title" name="title" #title="ngModel"
+                                placeholder="{{'Title is required' | translate}}"
+                                [(ngModel)]="link2edit.title" required maxlength="100" wrongSpace />
+                        <div *ngIf="title.errors && title.dirty && title.touched" class="alert alert-danger">
+                            <div [hidden]="!title.errors['required']">
+                                {{'Title is required' | translate}}
+                            </div>
+                            <div [hidden]="!title.errors['wrongSpace']">
+                                {{'Title contains leading or trailing spaces' | translate}}
+                            </div>
+                            <div [hidden]="!title.errors['maxlength']">
+                                {{'Title cannot be more than 100 characters long' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label for="href">{{'Address' | translate}}</label>
+                        <input type="text" class="form-control" id="href" name="href" #href="ngModel"
+                                placeholder="{{'Url is required' | translate}}"
+                                [(ngModel)]="link2edit.href" required wrongSpace urlStart />
+                        <div *ngIf="href.errors && href.dirty && href.touched" class="alert alert-danger">
+                            <div [hidden]="!href.errors['required']">
+                                {{'Url is required' | translate}}
+                            </div>
+                            <div [hidden]="!href.errors['wrongSpace']">
+                                {{'Url contains leading or trailing spaces' | translate}}
+                            </div>
+                            <div [hidden]="!href.errors['urlStart']">
+                                {{'Url must start with "http://", "https://" or "file://"' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label for="description">{{'Description' | translate}}</label>
+                        <textarea class="form-control" id="description" name="description" [(ngModel)]="link2edit.description"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label class="form-check-inline">
+                            <input class="form-check-input" type="checkbox"
+                                   [(ngModel)]="link2edit.showImage"
+                                   name="showImage" />
+                            {{'Show image' | translate}}
+                        </label>
+                        <label class="form-check-inline">
+                            <input class="form-check-input" type="checkbox"
+                                   [(ngModel)]="link2edit.showDescription"
+                                   name="showDescription" />
+                            {{'Show description' | translate}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </modal-body>
+        <modal-footer *ngIf="link2edit">
+            <div #footer>
+                <button type="button" class="btn btn-default" (click)="saveLinkAndImage()" [disabled]="!linkForm.form.valid">{{'Save' | translate}} </button>
+                <button type="button" class="btn btn-default" (click)="closeLinkEditor()">{{'Cancel' | translate}}</button>
+            </div>
+        </modal-footer>
+    </form>
+</modal>

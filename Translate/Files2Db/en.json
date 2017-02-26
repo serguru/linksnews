@@ -1,0 +1,174 @@
+﻿[
+  {
+    "Name": "UnderConstruction",
+    "Translates": [
+      {
+        "Name": "Under Construction",
+        "TranslateVersions": [
+          {
+            "Version": "Ext",
+            "Name": " is under construction"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Home",
+    "Translates": [
+      {
+        "Name": "Home",
+        "TranslateVersions": [
+          {
+            "Version": "Page",
+            "Name": "Home page"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Log in",
+    "Translates": [
+      {
+        "Name": "Log in",
+        "TranslateVersions": [
+          {
+            "Version": "Log In",
+            "Name": "Log In"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "edit column",
+    "Translates": [
+      {
+        "Name": "edit column",
+        "TranslateVersions": [
+          {
+            "Version": "Edit column",
+            "Name": "Edit column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "edit page",
+    "Translates": [
+      {
+        "Name": "edit page",
+        "TranslateVersions": [
+          {
+            "Version": "Edit page",
+            "Name": "Edit page"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Page",
+    "Translates": [
+      {
+        "Name": "Page",
+        "TranslateVersions": [
+          {
+            "Version": "page",
+            "Name": "page"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "leave edit mode",
+    "Translates": [
+      {
+        "Name": "leave edit mode",
+        "TranslateVersions": [
+          {
+            "Version": "Leave edit mode",
+            "Name": "Leave edit mode"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "column",
+    "Translates": [
+      {
+        "Name": "column",
+        "TranslateVersions": [
+          {
+            "Version": "Column",
+            "Name": "Column"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "edit link",
+    "Translates": [
+      {
+        "Name": "edit link",
+        "TranslateVersions": [
+          {
+            "Version": "Edit link",
+            "Name": "Edit link"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "edit row",
+    "Translates": [
+      {
+        "Name": "edit row",
+        "TranslateVersions": [
+          {
+            "Version": "Edit row",
+            "Name": "Edit row"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Add source",
+    "Translates": [
+      {
+        "Name": "Add source",
+        "TranslateVersions": [
+          {
+            "Version": "Add Source",
+            "Name": "Add Source"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "row",
+    "Translates": [
+      {
+        "Name": "row",
+        "TranslateVersions": [
+          {
+            "Version": "Row",
+            "Name": "Row"
+          }
+        ]
+      }
+    ]
+  }
+
+
+
+
+]

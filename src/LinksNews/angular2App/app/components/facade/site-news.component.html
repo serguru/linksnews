@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 links-page-column"
+         [style.height]="contentHeight > 0 ? contentHeight  + 'px' : ''">
+        <site-news-en-placeholder *ngIf="translate.currentLang === 'en'" [component]="this"></site-news-en-placeholder>
+        <site-news-ru-placeholder *ngIf="translate.currentLang === 'ru'" [component]="this"></site-news-ru-placeholder>
+    </div>
+</div>
+
+

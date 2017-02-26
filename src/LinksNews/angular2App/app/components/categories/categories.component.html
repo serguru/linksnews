@@ -1,0 +1,60 @@
+<div class="row links-height-100">
+    <div class="hidden-sm-down col-md-3 links-page-column bg-faded">
+        <sidebar-placeholder [component]="this"></sidebar-placeholder>
+    </div>
+    <div class="col-md-9 links-page-column links-height-100">
+        <!--<div *ngIf="categoryName && categoryName.toLowerCase() !== 'all'" class="links-height-100">-->
+        <div [hidden]="!categoryName || categoryName.toLowerCase() === 'all'" class="links-height-100">
+
+            <div class="row" [hidden]="!selectCategoriesVisible">
+                <div class="col-md-12">
+                    <div style="padding: 5px 0px">
+                        <a href="#" [routerLink]="['/categories/all']">{{'All categories' | translate}}</a>
+                    </div>
+                    <select class="form-control" id="categoriesSelect" name="categoriesSelect"
+                            [(ngModel)]="categoryName" (change)="onSelectCategory($event)">
+                        <option *ngFor="let category of categories"
+                                [value]="category.name">
+                            {{(category.name && category.name.toLowerCase() === 'all' ? 'All categories' : category.name) | translate}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row links-height-100">
+                <div class="col-md-12">
+                    <pages-list-placeholder *ngIf="pages && pages.length > 0" #pagesListComponent [pages]="pages"
+                        [viewMode]="viewMode"></pages-list-placeholder>
+
+                    <div *ngIf="pages && pages.length === 0" class="container-fluid links-height-100">
+                        <div class="row flex-items-xs-middle flex-items-xs-center links-height-100">
+                            <div class="col-xs-12 text-xs-center">
+                                <h5>{{'No pages in this category yet' | translate}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<table *ngIf="categoryName && categoryName.toLowerCase() === 'all'" class="links-table table table-striped">-->
+        <table [hidden]="!categoryName || categoryName.toLowerCase() !== 'all'" class="links-table table table-striped">
+            <tr>
+                <th>{{'Category' | translate}}</th>
+                <th>{{'Pages' | translate}}</th>
+                <th>{{'Authors' | translate}}</th>
+                <th>{{'News sources' | translate}}</th>
+            </tr>
+            <tr *ngFor="let category of categories">
+                <td *ngIf="category.id == -1">{{'All categories' | translate}}</td>
+                <td *ngIf="category.id >= 0"><a href="#" [routerLink]="['/categories', category.name]">{{category.name | translate}}</a></td>
+                <td>{{category.pagesCount}}</td>
+                <td>{{category.authorsCount}}</td>
+                <td>{{category.newsSourcesCount}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+

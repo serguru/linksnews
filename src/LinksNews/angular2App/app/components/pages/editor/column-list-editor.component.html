@@ -1,0 +1,69 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <label>{{'Columns' | translate}}</label>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="btn-group btn-group col-md-4" role="group">
+                <button type="button" class="btn btn-secondary"
+                        (click)="addColumn()">
+                    {{'Add' | translate}}
+                </button>
+                <button type="button" class="btn btn-secondary"
+                        [disabled]="!row.selectedColumn"
+                        (click)="row.deleteColumn(row.selectedColumn)">
+                    {{'Delete' | translate}}
+                </button>
+            </div>
+            <div class="col-md-8">
+                <div class="btn-group btn-group pull-right" role="group">
+                    <button type="button" class="btn btn-secondary"
+                            [disabled]="!row.selectedColumn || row.selectedColumn.columnWidth <= 1"
+                            (click)="row.makeColumnNarrower(row.selectedColumn)">
+                        {{'Make Narrower' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-secondary"
+                            [disabled]="!row.selectedColumn || row.totalColumnsWidth >= 12"
+                            (click)="row.makeColumnWider(row.selectedColumn)">
+                        {{'Make Wider' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-secondary"
+                            [disabled]="!row.selectedColumn || row.leftmostColumnSelected"
+                            (click)="row.shiftSelectedColumnLeft()">
+                        {{'To Left' | translate}}
+                    </button>
+                    <button type="button" class="btn btn-secondary"
+                            [disabled]="!row.selectedColumn || row.rightmostColumnSelected"
+                            (click)="row.shiftSelectedColumnRight()">
+                        {{'To Right' | translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="row && row.columns && row.columns.length === 0" class="row links-presenter-list">
+            <div class="col-xs-12">
+                <div class="container-fluid links-presenter">
+                    <div class="row flex-items-xs-middle flex-items-xs-center links-height-100">
+                        <div class="col-xs-12 text-xs-center links-pale-text">
+                            {{'no columns' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="row && row.columns && row.columns.length > 0" class="row links-presenter-list">
+            <column-presenter-placeholder *ngFor="let column of row.columns" 
+                                          [row]="row" [column]="column" 
+                class="col-xs-{{column.columnWidth}} links-no-padding-15">
+            </column-presenter-placeholder>
+        </div>
+
+    </div>
+</div>
+
+
+

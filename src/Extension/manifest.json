@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Links And News Google Chrome extension",
+  "version": "0.0.0.4",
+  "description": "This extension is to add links to Links And News website",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Click to add link"
+  },
+
+  "homepage_url": "https://linksnews.org",
+
+  "permissions": [
+    "tabs",
+    "debugger",
+    "http://*/",
+    "https://*/"
+  ]
+}

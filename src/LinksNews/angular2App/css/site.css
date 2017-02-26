@@ -1,0 +1,421 @@
+﻿html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#splashDiv {
+    overflow: hidden;
+}
+
+.links-height-100 {
+    height: 100%;
+}
+
+.links-height-80 {
+    height: 80%;
+}
+
+.links-height-50 {
+    height: 50%;
+}
+
+.links-height-30 {
+    height: 30%;
+}
+
+.links-height-60 {
+    height: 60%;
+}
+
+.links-height-20 {
+    height: 20%;
+}
+
+.links-pale-text {
+    color: #ccc;
+}
+
+button.close {
+    margin-left: 20px;
+}
+
+.links-active-link {
+    font-weight: bold;
+}
+
+.links-ad {
+    height: 40px;
+    /*background-color: azure;*/
+}
+
+.links-btn-file {
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.links-btn-file > input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  /*font-size: 23px;*/
+  cursor: pointer;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  direction: ltr;
+}
+
+.links-align-text-right {
+    text-align: right;
+}
+
+.links-link-btn-color {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.links-no-padding {
+    padding: 0px;
+}
+
+div.card {
+    border-width: 0px;
+}
+
+.links-presenter-list {
+    min-height: 60px;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.links-presenter {
+    border: solid thin lightgrey;
+    border-radius: 3px;
+    height: 100%;
+    overflow: hidden;
+    padding: 0px;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+    .links-presenter.links-selected {
+        border-color: #0275d8;
+    }
+
+    .links-presenter.links-page-presenter {
+        min-width: 100px;
+        max-width: 300px;
+        display: inline-flex;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .links-presenter.links-row-presenter {
+        min-height: 35px;
+        text-align: center;
+    }
+
+.links-page {
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+.links-column {
+    padding-top: 10px;
+}
+
+div.links-column, div.links-link  {
+    overflow: hidden;
+}
+
+/*.links-page img:first-of-type {
+    max-height: 100px; 
+    max-width: 100px;
+}*/
+
+.links-page h4:first-of-type {
+    display: inline;
+}
+
+modal-body > div {
+    overflow: auto;
+}
+
+modal img {
+    max-height: 100px; 
+    max-width: 100px;
+}
+
+modal .card {
+    height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    display:flex;
+    align-items: center; /* Vertical center alignment */
+    justify-content: center;
+}
+
+.links-link {
+    padding-top: 3px;
+}
+
+/*.links-link img {
+    max-height: 100px; 
+    max-width: 100px;
+    margin: 5px;
+}*/   
+
+.links-link td {
+    vertical-align: top; 
+}   
+
+.links-link section {
+    font-size: small;
+}   
+
+.ng-valid[required] {
+    border-left: 5px solid #5cb85c; /* green */
+}
+.ng-invalid.ng-touched {
+    border-left: 5px solid #d9534f; /* red */
+}
+.header-style {
+    color: #fff;
+    background-color: #128477;
+}
+
+.links-table-parent {
+    max-height: 500px;
+}
+
+.links-table { 
+    border-collapse: collapse; 
+    width: 100%;
+}
+
+.links-responsive-table .links-cell {
+    padding: 5px;
+    overflow: hidden;
+}
+
+.links-responsive-table .links-table-header {
+    font-weight: bold;
+    padding: 10px 0px;
+}
+
+
+.links-table img { 
+    max-height: 50px;
+}
+
+.links-table td { 
+    padding: 10px;
+    vertical-align: top;
+}
+
+.links-table th { 
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.links-table-selected-row {
+    border: solid thin highlight;
+}
+
+.links-table .custom-control-indicator {
+    top: 0px;
+}
+
+.links-toggler {
+    position: fixed;
+    z-index: 1999;
+    border-radius: 5px;
+}
+
+
+.links-icon-bar {
+  display: block;
+  width: 23px;
+  height: 4px;
+/* TODO: make color theme dependable */
+  background-color: #cccccc;
+  border-radius: 1px;
+  margin: 3px;
+}
+
+body {
+    overflow: hidden;
+}
+
+.links-page-column {
+    overflow: auto;
+}
+
+i.fa-edit {
+    cursor: pointer;
+}
+
+div.links-upload {
+    max-width: 200px; 
+    max-height: 200px;
+    min-height: 50px;
+    min-width: 50px;
+    border: solid 1px lightgrey;
+    border-radius: 3px;
+}
+
+.links-upload img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+
+
+.links-page.links-page-edit {
+    border: solid 1px lightgrey;
+    border-radius: 3px;
+    margin: 15px 0px;
+}
+
+.links-page.links-page-edit .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.links-page .links-column-edit {
+    border: solid 1px lightgrey;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.links-page .links-row-edit {
+    border: solid 1px lightgrey;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.links-page .links-link-edit {
+    border: solid 1px lightgrey;
+    border-radius: 3px;
+}
+
+/*#footer {
+    margin-left: -15px;
+    margin-right: -15px;
+}*/
+
+
+.btn.btn-primary {
+    background-color: transparent;
+    border:1px solid #007FFF;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+    color:#007FFF;
+}
+
+.btn.btn-primary:hover {
+    opacity: 0.7;
+}
+
+.btn-primary-outline {
+    border-color:#007FFF;
+    color:#007FFF;
+}
+.btn-primary-outline:hover {
+    background-color:#007FFF;
+}
+
+.navbar-light .navbar-toggler {
+    background-image: none;
+    border: none;
+}
+
+.links-splash h1,h5 {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#twoClicks {
+    padding-top: 10px;
+}
+
+/*form .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}*/
+
+file-upload-placeholder {
+    /*border: solid 1px lightgrey;
+    border-radius: 3px;*/
+    padding: 15px;
+}
+
+.links-no-padding-15 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div column-presenter-placeholder.links-no-padding-15:first-of-type {
+    padding-left: 15px;
+    padding-right: 5px;
+}
+div column-presenter-placeholder.links-no-padding-15:last-of-type {
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+.links-wait {
+    height: 200px;
+}
+
+.links-no-bullet {
+    list-style: none;
+}
+
+#linksNavbar li button:not(.dropdown-item) {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.links-tile-table {
+    width: 250px;
+}
+
+    .links-tile-table img {
+        max-height: 250px;
+        border-radius: 0.25rem;
+    }
+
+
+@media(max-width: 520px) {
+    .links-tile-table img {
+        max-width: calc(100% - 40px);
+        border-radius: 0.25rem;
+    }
+}
+
+.links-list-table td {
+    vertical-align: top;
+}
+
+.links-clickable {
+    cursor: pointer;
+}
+
+.links-sortable-content div {
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+}
+
+img.img-thumbnail {
+    border: none;
+}
+
+.links-row {
+    padding-top: 12px;
+}
