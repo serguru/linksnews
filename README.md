@@ -1,5 +1,5 @@
 # linksnews
-Links&amp;News: responsive SPA web application to bookmark links and read news on own pages
+Links&amp;News: responsive SPA website to bookmark links and read news on own pages
 
 There are a lot of resources on the Internet to whom you would like to come back again and again. To make this possible you need to store somewhere links (bookmarks) to such resources. The paper on which you have written down a link will be lost immediately. Use of the browser to store links is uncomfortable. Everytime search for the desired link using of Google is tedious. So what to do?
 
