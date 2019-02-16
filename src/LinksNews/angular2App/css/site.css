@@ -253,6 +253,7 @@ body {
 
 .links-page-column {
     overflow: auto;
+    height: 100%;
 }
 
 i.fa-edit {
